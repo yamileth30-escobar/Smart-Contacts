@@ -5,3 +5,10 @@ C:\Users\USER\source\repos\AgendaContactos\EL\obj\Debug\EL.csproj.AssemblyRefere
 C:\Users\USER\source\repos\AgendaContactos\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
 C:\Users\USER\source\repos\AgendaContactos\EL\obj\Debug\EL.dll
 C:\Users\USER\source\repos\AgendaContactos\EL\obj\Debug\EL.pdb
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\bin\Debug\EL.dll.config
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\bin\Debug\EL.dll
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\bin\Debug\EL.pdb
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.csproj.AssemblyReference.cache
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.dll
+C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.pdb

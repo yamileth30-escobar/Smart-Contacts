@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgendaContactos.GUI.Autenticacion
@@ -17,34 +10,37 @@ namespace AgendaContactos.GUI.Autenticacion
             InitializeComponent();
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
-            // validar las credenciales
-            if (txtUsuario.Text.Equals("yami") && txtContraseña.Text.Equals("tokio25"))
+            // Validar las credenciales (las que ya tenías)
+            if (txtUsuario.Text.Trim().Equals("yami") && txtContraseña.Text.Trim().Equals("tokio25"))
             {
-                // vamos a agregar el valor DialogResult.Ok a la propiedad DialogResult del formulario Login
-                this.DialogResult = DialogResult.OK;
-                // cerrar el formulario
+                // === CONEXIÓN CON EL MENÚ PRINCIPAL ===
+                this.Hide();                    // Ocultamos el Login
+
+                // Creamos y mostramos el formulario principal
+                MainForm frmPrincipal = new MainForm();
+                frmPrincipal.ShowDialog();      // Mostramos el menú principal
+
+                // Cuando el usuario cierre el MainForm, también cerramos el Login
                 this.Close();
             }
             else
             {
-                // mostrar un mensaje de error
-                MessageBox.Show("Credenciales incorrectas.", "Banco Green | Inicio de Sesión",
+                // Mostrar mensaje de error
+                MessageBox.Show("Credenciales incorrectas.", "Smart Contacts | Inicio de Sesión",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                // limpiar los txt y enfocar el txtUsuario
+                // Limpiar campos y enfocar usuario
                 txtUsuario.Clear();
                 txtContraseña.Clear();
-
                 txtUsuario.Focus();
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            // Opcional: puedes poner aquí código que se ejecute al cargar el login
         }
     }
 }
-

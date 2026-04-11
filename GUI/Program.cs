@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using AgendaContactos.GUI.Autenticacion;
 
 namespace AgendaContactos.GUI
 {
@@ -10,7 +11,7 @@ namespace AgendaContactos.GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Login());
         }
     }
 }

@@ -49,11 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendaContactos\FrmAgregarContacto.cs" />
+    <Compile Include="AgendaContactos\FrmBuscarContacto.cs" />
+    <Compile Include="AgendaContactos\FrmListaContactos.cs" />
     <Compile Include="Autenticacion\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Autenticacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias\FrmGestionarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\FrmAgregarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\FrmAgregarContacto.Designer.cs">
+      <DependentUpon>FrmAgregarContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contactos\FrmBuscarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\FrmBuscarContacto.Designer.cs">
+      <DependentUpon>FrmBuscarContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contactos\FrmListaContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\FrmListaContactos.Designer.cs">
+      <DependentUpon>FrmListaContactos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -75,6 +102,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Autenticacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\FrmListaContactos.resx">
+      <DependentUpon>FrmListaContactos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -98,10 +128,7 @@
       <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Categorias\" />
-    <Folder Include="Contactos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Recursos\9781056-icone-de-design-moderno-de-seguranca-de-perfil-da-web-vetor.jpg" />
     <Content Include="Recursos\calendario-_1_.ico" />
