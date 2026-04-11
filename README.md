@@ -3,6 +3,9 @@
 # 🎯Objetivo
 Desarrollar una aplicación de escritorio que permita administrar contactos de forma eficiente mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar), utilizando una base de datos en SQL Server y aplicando una arquitectura en capas.
 
+# Aplicación
+
+Aplicación de escritorio desarrollada en .NET Framework con Windows Forms.
 
 ## Grupo 6 👨‍💻
 * **María Guadalupe Canjura Díaz:** guadalupe-a11y 
