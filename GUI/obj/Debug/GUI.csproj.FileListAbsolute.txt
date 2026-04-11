@@ -44,3 +44,5 @@ C:\Users\mcanj\source\repos\Smart-Contacts\GUI\bin\Debug\EL.dll.config
 C:\Users\mcanj\source\repos\Smart-Contacts\GUI\bin\Debug\EntityFramework.xml
 C:\Users\mcanj\source\repos\Smart-Contacts\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Users\mcanj\source\repos\Smart-Contacts\GUI\obj\Debug\GUI.Contactos.FrmListaContactos.resources
+C:\Users\mcanj\source\repos\Smart-Contacts\GUI\obj\Debug\Categorias.FrmGestionarCategorias.resources
+C:\Users\mcanj\source\repos\Smart-Contacts\GUI\obj\Debug\AgendaContactos.GUI.Contactos.FrmAgregarContacto.resources

@@ -29,16 +29,16 @@ namespace AgendaContactos.GUI
         }
 
         // MENÚ CONTACTOS
-        private void agregarNuevoContactoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listaDeContactosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgendaContactos.FrmAgregarContacto frm = new AgendaContactos.FrmAgregarContacto();
+            AgendaContactos.FrmListaContactos frm = new AgendaContactos.FrmListaContactos();
             frm.MdiParent = this;
             frm.Show();
         }
 
-        private void verListaDeContactosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarContactoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgendaContactos.FrmListaContactos frm = new AgendaContactos.FrmListaContactos();
+            AgendaContactos.FrmAgregarContacto frm = new AgendaContactos.FrmAgregarContacto();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -67,6 +67,11 @@ namespace AgendaContactos.GUI
                             "Acerca de Smart Contacts",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

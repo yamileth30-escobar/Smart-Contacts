@@ -103,6 +103,12 @@
     <EmbeddedResource Include="Autenticacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Categorias\FrmGestionarCategorias.resx">
+      <DependentUpon>FrmGestionarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\FrmAgregarContacto.resx">
+      <DependentUpon>FrmAgregarContacto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Contactos\FrmListaContactos.resx">
       <DependentUpon>FrmListaContactos.cs</DependentUpon>
     </EmbeddedResource>
