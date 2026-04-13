@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace AgendaContactos.GUI.Autenticacion
@@ -12,35 +14,61 @@ namespace AgendaContactos.GUI.Autenticacion
 
         private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
-            // Validar las credenciales (las que ya tenías)
-            if (txtUsuario.Text.Trim().Equals("yami") && txtContraseña.Text.Trim().Equals("tokio25"))
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text))
             {
-                // === CONEXIÓN CON EL MENÚ PRINCIPAL ===
-                this.Hide();                    // Ocultamos el Login
-
-                // Creamos y mostramos el formulario principal
-                MainForm frmPrincipal = new MainForm();
-                frmPrincipal.ShowDialog();      // Mostramos el menú principal
-
-                // Cuando el usuario cierre el MainForm, también cerramos el Login
-                this.Close();
+                MessageBox.Show("Por favor ingrese usuario y contraseña", "Campos vacíos",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
-            {
-                // Mostrar mensaje de error
-                MessageBox.Show("Credenciales incorrectas.", "Smart Contacts | Inicio de Sesión",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                // Limpiar campos y enfocar usuario
-                txtUsuario.Clear();
-                txtContraseña.Clear();
-                txtUsuario.Focus();
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["AgendaContactosDB"].ConnectionString;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Username = @Username AND Password = @Password";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", txtUsuario.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Password", txtContraseña.Text.Trim());
+
+                        int existe = (int)cmd.ExecuteScalar();
+
+                        if (existe > 0)
+                        {
+                            MessageBox.Show("Inicio de sesión exitoso", "Bienvenido",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            this.Hide();
+                            MainForm frmPrincipal = new MainForm();
+                            frmPrincipal.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario o contraseña incorrectos", "Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtContraseña.Clear();
+                            txtUsuario.Focus();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con la base de datos:\n\n" + ex.Message,
+                                "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // Opcional: puedes poner aquí código que se ejecute al cargar el login
+            // Opcional: puedes poner foco en txtUsuario al cargar
+            txtUsuario.Focus();
         }
     }
 }

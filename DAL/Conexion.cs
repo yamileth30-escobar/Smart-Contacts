@@ -3,19 +3,13 @@ using System.Data.SqlClient;
 
 namespace AgendaContactos.DAL
 {
-    internal class Conexion
+
+    public class Conexion
     {
-        internal SqlConnection ObtenerConexion()
+        public static SqlConnection ObtenerConexion()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["conexionBD"]?.ConnectionString;
-
-            if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                throw new ConfigurationErrorsException(
-                    "No se encontró la cadena de conexión 'conexionBD' en App.config.");
-            }
-
-            return new SqlConnection(connectionString);
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["AgendaContactos"].ConnectionString;
+            return new SqlConnection(cadenaConexion);
         }
     }
 }

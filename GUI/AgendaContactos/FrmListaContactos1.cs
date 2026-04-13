@@ -3,16 +3,11 @@ using System;
 
 namespace AgendaContactos
 {
-    internal class FrmAgregarContacto
+    internal class FrmListaContactos
     {
         public MainForm MdiParent { get; internal set; }
 
         internal void Show()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void ShowDialog()
         {
             throw new NotImplementedException();
         }

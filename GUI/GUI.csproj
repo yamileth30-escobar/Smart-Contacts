@@ -51,7 +51,10 @@
   <ItemGroup>
     <Compile Include="AgendaContactos\FrmAgregarContacto.cs" />
     <Compile Include="AgendaContactos\FrmBuscarContacto.cs" />
-    <Compile Include="AgendaContactos\FrmListaContactos.cs" />
+    <Compile Include="AgendaContactos\FrmListaContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaContactos\FrmListaContactos1.cs" />
     <Compile Include="Autenticacion\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +82,7 @@
     <Compile Include="Contactos\FrmListaContactos.Designer.cs">
       <DependentUpon>FrmListaContactos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Conexion.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +104,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgendaContactos\FrmListaContactos.resx">
+      <DependentUpon>FrmListaContactos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autenticacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contactos\FrmListaContactos.resx">
       <DependentUpon>FrmListaContactos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
