@@ -13,5 +13,8 @@ namespace AgendaContactos.EL
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
+
+        // Relación con la tabla Categoria
+        public int IdCategoria { get; set; }
     }
 }

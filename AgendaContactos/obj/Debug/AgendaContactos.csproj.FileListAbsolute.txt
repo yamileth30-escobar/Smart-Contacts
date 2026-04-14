@@ -12,3 +12,10 @@ C:\Users\mcanj\source\repos\Smart-Contacts\AgendaContactos\obj\Debug\AgendaConta
 C:\Users\mcanj\source\repos\Smart-Contacts\AgendaContactos\obj\Debug\AgendaContactos.csproj.CoreCompileInputs.cache
 C:\Users\mcanj\source\repos\Smart-Contacts\AgendaContactos\obj\Debug\AgendaContactos.exe
 C:\Users\mcanj\source\repos\Smart-Contacts\AgendaContactos\obj\Debug\AgendaContactos.pdb
+C:\GITHUB\AgendaContactos\bin\Debug\AgendaContactos.exe.config
+C:\GITHUB\AgendaContactos\bin\Debug\AgendaContactos.exe
+C:\GITHUB\AgendaContactos\bin\Debug\AgendaContactos.pdb
+C:\GITHUB\AgendaContactos\obj\Debug\AgendaContactos.csproj.AssemblyReference.cache
+C:\GITHUB\AgendaContactos\obj\Debug\AgendaContactos.csproj.CoreCompileInputs.cache
+C:\GITHUB\AgendaContactos\obj\Debug\AgendaContactos.exe
+C:\GITHUB\AgendaContactos\obj\Debug\AgendaContactos.pdb

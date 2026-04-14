@@ -1,102 +1,63 @@
-﻿using AgendaContactos.EL;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
 using System.Data.SqlClient;
+using AgendaContactos.EL;
 
 namespace AgendaContactos.DAL
 {
     public class UsuarioDAL
     {
-        private readonly Conexion conexion = new Conexion();
+        // Se eliminó la variable "private readonly Conexion conexion" porque no es necesaria
 
         public bool Login(Usuario u)
         {
-            using (SqlConnection con = conexion.ObtenerConexion())
+            // Cambiado a Conexion.ObtenerConexion() (Estático)
+            using (SqlConnection con = Conexion.ObtenerConexion())
             {
                 con.Open();
+                string sql = "SELECT COUNT(*) FROM Usuarios WHERE Username=@u AND Password=@p";
 
-                using (SqlCommand cmd = new SqlCommand(
-                    "SELECT COUNT(*) FROM Usuarios WHERE Username=@u AND Password=@p", con))
+                using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("@u", u.Username);
                     cmd.Parameters.AddWithValue("@p", u.Password);
 
-                    return (int)cmd.ExecuteScalar() > 0;
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
                 }
             }
         }
 
         public void AsegurarUsuarioPorDefecto()
         {
-            using (SqlConnection con = conexion.ObtenerConexion())
+            using (SqlConnection con = Conexion.ObtenerConexion())
             {
                 con.Open();
 
-                string sql = @"
-IF NOT EXISTS (
-    SELECT 1
-    FROM Usuarios
-    WHERE Username = @u
-)
-BEGIN
-    INSERT INTO Usuarios (Username, Password)using AgendaContactos.EL;
-using System.Data.SqlClient;
+                // Verificamos si existe el usuario "yamileth"
+                string checkSql = "SELECT COUNT(*) FROM Usuarios WHERE Username=@u";
+                int existe = 0;
 
-namespace AgendaContactos.DAL
-{
-    public class UsuarioDAL
-    {
-        private readonly Conexion conexion = new Conexion();
-
-        public bool Login(Usuario u)
-        {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            {
-                con.Open();
-
-                string sql = ""SELECT COUNT(*) FROM Usuarios WHERE Username=@u AND Password=@p"";
-
-                using (SqlCommand cmd = new SqlCommand(sql, con))
+                using (SqlCommand cmdCheck = new SqlCommand(checkSql, con))
                 {
-                    cmd.Parameters.AddWithValue(""@u"", u.Username);
-                    cmd.Parameters.AddWithValue(""@p"", u.Password);
-
-                    return (int)cmd.ExecuteScalar() > 0;
+                    cmdCheck.Parameters.AddWithValue("@u", "yamileth");
+                    existe = Convert.ToInt32(cmdCheck.ExecuteScalar());
                 }
-            }
-        }
 
-        public void AsegurarUsuarioPorDefecto()
-        {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            {
-                con.Open();
-
-                string sql = @""
-IF NOT EXISTS (
-    SELECT 1 FROM Usuarios WHERE Username = @u
-)
-BEGIN
-    INSERT INTO Usuarios (Username, Password)
-    VALUES (@u, @p)
-END"";
-
-                using (SqlCommand cmd = new SqlCommand(sql, con))
+                // Si no existe, lo insertamos
+                if (existe == 0)
                 {
-                    cmd.Parameters.AddWithValue(""@u"", ""yamileth"");
-                    cmd.Parameters.AddWithValue(""@p"", ""Tokio25"");
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-    }
-}
-    VALUES (@u, @p)
-END";
-
-                using (SqlCommand cmd = new SqlCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@u", "yamileth");
-                    cmd.Parameters.AddWithValue("@p", "Tokio25");
-                    cmd.ExecuteNonQuery();
+                    string insertSql = "INSERT INTO Usuarios (Username, Password) VALUES (@u, @p)";
+                    using (SqlCommand cmdInsert = new SqlCommand(insertSql, con))
+                    {
+                        cmdInsert.Parameters.AddWithValue("@u", "yamileth");
+                        cmdInsert.Parameters.AddWithValue("@p", "Tokio25**");
+                        cmdInsert.ExecuteNonQuery();
+                    }
                 }
             }
         }

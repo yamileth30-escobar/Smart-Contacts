@@ -11,5 +11,8 @@ namespace AgendaContactos.EL
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        // Define el nivel de acceso (opcional pero recomendado)
+        public string Rol { get; set; }
     }
 }

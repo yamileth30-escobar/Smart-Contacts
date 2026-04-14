@@ -12,3 +12,10 @@ C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.csproj.AssemblyRefere
 C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
 C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.dll
 C:\Users\mcanj\source\repos\Smart-Contacts\EL\obj\Debug\EL.pdb
+C:\GITHUB\EL\bin\Debug\EL.dll.config
+C:\GITHUB\EL\bin\Debug\EL.dll
+C:\GITHUB\EL\bin\Debug\EL.pdb
+C:\GITHUB\EL\obj\Debug\EL.csproj.AssemblyReference.cache
+C:\GITHUB\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
+C:\GITHUB\EL\obj\Debug\EL.dll
+C:\GITHUB\EL\obj\Debug\EL.pdb
