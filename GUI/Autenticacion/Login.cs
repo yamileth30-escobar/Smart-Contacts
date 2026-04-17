@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GUI;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+// Este es el espacio donde vive tu Login
 namespace AgendaContactos.GUI.Autenticacion
 {
     public partial class Login : Form
@@ -28,7 +30,6 @@ namespace AgendaContactos.GUI.Autenticacion
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-
                     string query = "SELECT COUNT(*) FROM Usuarios WHERE Username = @Username AND Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -44,7 +45,12 @@ namespace AgendaContactos.GUI.Autenticacion
                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Hide();
+
+                            // --- SOLUCIÓN DEFINITIVA ---
+                            // Buscamos el MainForm en la raíz del proyecto GUI
+                            // Si MainForm está dentro de otra carpeta, asegúrate de que sea 'public'
                             MainForm frmPrincipal = new MainForm();
+
                             frmPrincipal.ShowDialog();
                             this.Close();
                         }
@@ -60,14 +66,13 @@ namespace AgendaContactos.GUI.Autenticacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar con la base de datos:\n\n" + ex.Message,
-                                "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de conexión:\n" + ex.Message, "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // Opcional: puedes poner foco en txtUsuario al cargar
             txtUsuario.Focus();
         }
     }

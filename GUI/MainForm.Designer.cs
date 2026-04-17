@@ -1,4 +1,4 @@
-﻿namespace AgendaContactos.GUI
+﻿namespace GUI
 {
     partial class MainForm
     {
@@ -68,7 +68,7 @@
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
-            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
+           
             // 
             // salirToolStripMenuItem
             // 

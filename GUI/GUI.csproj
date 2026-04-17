@@ -49,12 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgendaContactos\FrmAgregarContacto.cs" />
-    <Compile Include="AgendaContactos\FrmBuscarContacto.cs" />
-    <Compile Include="AgendaContactos\FrmListaContactos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgendaContactos\FrmListaContactos1.cs" />
     <Compile Include="Autenticacion\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +98,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AgendaContactos\FrmListaContactos.resx">
-      <DependentUpon>FrmListaContactos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Autenticacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,7 +135,9 @@
       <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AgendaContactos\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Recursos\9781056-icone-de-design-moderno-de-seguranca-de-perfil-da-web-vetor.jpg" />
     <Content Include="Recursos\calendario-_1_.ico" />

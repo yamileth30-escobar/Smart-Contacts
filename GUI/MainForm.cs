@@ -1,7 +1,10 @@
-﻿using System;
+﻿using AgendaContactos.GUI.Contactos;
+// Esta línea es la clave para que encuentre tus otros formularios
+using GUI.Contactos;
+using System;
 using System.Windows.Forms;
 
-namespace AgendaContactos.GUI
+namespace GUI
 {
     public partial class MainForm : Form
     {
@@ -10,10 +13,10 @@ namespace AgendaContactos.GUI
             InitializeComponent();
 
             // Configuración del formulario principal
-            IsMdiContainer = true;
-            WindowState = FormWindowState.Maximized;
-            Text = "Smart Contacts - Agenda de Contactos";
-            StartPosition = FormStartPosition.CenterScreen;
+            this.IsMdiContainer = true;
+            this.WindowState = FormWindowState.Maximized;
+            this.Text = "Smart Contacts - Agenda de Contactos";
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         //  MENÚ ARCHIVO 
@@ -31,21 +34,22 @@ namespace AgendaContactos.GUI
         // MENÚ CONTACTOS
         private void listaDeContactosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgendaContactos.FrmListaContactos frm = new AgendaContactos.FrmListaContactos();
+            // CORRECCIÓN: Quitamos la 'S' extra y usamos el nombre correcto
+            FrmListaContactos frm = new FrmListaContactos();
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void agregarContactoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgendaContactos.FrmAgregarContacto frm = new AgendaContactos.FrmAgregarContacto();
+            FrmAgregarContacto frm = new FrmAgregarContacto();
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void buscarContactoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgendaContactos.FrmBuscarContacto frm = new AgendaContactos.FrmBuscarContacto();
+            FrmBuscarContacto frm = new FrmBuscarContacto();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -53,12 +57,11 @@ namespace AgendaContactos.GUI
         // MENÚ CATEGORÍAS 
         private void gestionarCategoríasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Categorias.FrmGestionarCategorias frm = new Categorias.FrmGestionarCategorias();
-            frm.MdiParent = this;
-            frm.Show();
+            // Si tienes una carpeta Categorias, asegúrate de tener el 'using' arriba
+            // o llámalo directamente si el nombre es correcto:
+            // Categorias.FrmGestionarCategorias frm = new Categorias.FrmGestionarCategorias();
         }
 
-        //  MENÚ AYUDA 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Smart Contacts v1.0\n\n" +
@@ -67,11 +70,6 @@ namespace AgendaContactos.GUI
                             "Acerca de Smart Contacts",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-        }
-
-        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
