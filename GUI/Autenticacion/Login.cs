@@ -1,10 +1,16 @@
 ﻿using GUI;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Este es el espacio donde vive tu Login
 namespace AgendaContactos.GUI.Autenticacion
 {
     public partial class Login : Form
@@ -14,66 +20,65 @@ namespace AgendaContactos.GUI.Autenticacion
             InitializeComponent();
         }
 
-        private void BtnIniciarSesion_Click(object sender, EventArgs e)
+        // Esto es para que el cursor aparezca de un solo en el cuadro de usuario
+        private void Login_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text))
+            txtUsuario.Focus();
+        }
+
+        private void btnIniciarSesion_Click_1(object sender, EventArgs e)
+        {
+            // 1. Validamos que no dejen los campos vacíos
+            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
             {
-                MessageBox.Show("Por favor ingrese usuario y contraseña", "Campos vacíos",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, llena todos los campos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["AgendaContactosDB"].ConnectionString;
+                // 2. Jalamos la conexión de tu App.config
+                string cadena = ConfigurationManager.ConnectionStrings["AgendaContactos"].ConnectionString;
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conexion = new SqlConnection(cadena))
                 {
-                    conn.Open();
-                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Username = @Username AND Password = @Password";
+                    conexion.Open();
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    // 3. Consulta SQL CORREGIDA: Cambiamos 'Clave' por 'Contrasena'
+                    // Esto tiene que ser IGUAL a como está en tu tabla de SQL Server
+                    string query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @user AND Contrasena = @pass";
+
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@user", txtUsuario.Text.Trim());
+                    cmd.Parameters.AddWithValue("@pass", txtContraseña.Text.Trim());
+
+                    int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    // 4. Si el resultado es mayor a 0, los datos son correctos
+                    if (resultado > 0)
                     {
-                        cmd.Parameters.AddWithValue("@Username", txtUsuario.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Password", txtContraseña.Text.Trim());
+                        MessageBox.Show("¡Inicio de sesión exitoso!", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        int existe = (int)cmd.ExecuteScalar();
+                        // Abrimos el menú principal
+                        MainForm menu = new MainForm();
+                        menu.Show();
 
-                        if (existe > 0)
-                        {
-                            MessageBox.Show("Inicio de sesión exitoso", "Bienvenido",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            this.Hide();
-
-                            // --- SOLUCIÓN DEFINITIVA ---
-                            // Buscamos el MainForm en la raíz del proyecto GUI
-                            // Si MainForm está dentro de otra carpeta, asegúrate de que sea 'public'
-                            MainForm frmPrincipal = new MainForm();
-
-                            frmPrincipal.ShowDialog();
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuario o contraseña incorrectos", "Error",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtContraseña.Clear();
-                            txtUsuario.Focus();
-                        }
+                        // Ocultamos el login
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtContraseña.Clear();
+                        txtUsuario.Focus();
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de conexión:\n" + ex.Message, "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Si sale error aquí, revisá que el nombre en App.config sea "AgendaContactos"
+                MessageBox.Show("Error de conexión: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            txtUsuario.Focus();
         }
     }
 }
