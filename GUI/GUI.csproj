@@ -70,6 +70,18 @@
     <Compile Include="Contactos\FrmBuscarContacto.Designer.cs">
       <DependentUpon>FrmBuscarContacto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contactos\FrmEditarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\FrmEditarContacto.Designer.cs">
+      <DependentUpon>FrmEditarContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contactos\FrmEliminarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\FrmEliminarContacto.Designer.cs">
+      <DependentUpon>FrmEliminarContacto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contactos\FrmListaContactos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contactos\FrmAgregarContacto.resx">
       <DependentUpon>FrmAgregarContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\FrmBuscarContacto.resx">
+      <DependentUpon>FrmBuscarContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\FrmEditarContacto.resx">
+      <DependentUpon>FrmEditarContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\FrmEliminarContacto.resx">
+      <DependentUpon>FrmEliminarContacto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contactos\FrmListaContactos.resx">
       <DependentUpon>FrmListaContactos.cs</DependentUpon>

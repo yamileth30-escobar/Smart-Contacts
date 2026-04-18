@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace AgendaContactos.GUI.Contactos
 {
-    public partial class FrmBuscarContacto : Form
+  public partial class FrmEliminarContacto : Form
+  {
+    public FrmEliminarContacto()
     {
-        public FrmBuscarContacto()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
+    }
 
     private void label1_Click(object sender, EventArgs e)
     {

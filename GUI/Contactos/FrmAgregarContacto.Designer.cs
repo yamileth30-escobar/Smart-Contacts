@@ -1,4 +1,4 @@
-﻿namespace AgendaContactos.GUI.Contactos
+namespace AgendaContactos.GUI.Contactos
 {
     partial class FrmAgregarContacto
     {
@@ -47,61 +47,68 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 24);
+            this.label1.Location = new System.Drawing.Point(44, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(182, 18);
+            this.textBox1.Location = new System.Drawing.Point(205, 22);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 22);
+            this.textBox1.Size = new System.Drawing.Size(294, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(182, 272);
+            this.textBox2.Location = new System.Drawing.Point(205, 340);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(262, 22);
+            this.textBox2.Size = new System.Drawing.Size(294, 26);
             this.textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(182, 199);
+            this.textBox3.Location = new System.Drawing.Point(205, 249);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(262, 22);
+            this.textBox3.Size = new System.Drawing.Size(294, 26);
             this.textBox3.TabIndex = 3;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(182, 139);
+            this.textBox4.Location = new System.Drawing.Point(205, 174);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(262, 22);
+            this.textBox4.Size = new System.Drawing.Size(294, 26);
             this.textBox4.TabIndex = 4;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(182, 74);
+            this.textBox5.Location = new System.Drawing.Point(205, 92);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(262, 22);
+            this.textBox5.Size = new System.Drawing.Size(294, 26);
             this.textBox5.TabIndex = 5;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 339);
+            this.comboBox1.Location = new System.Drawing.Point(205, 424);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 24);
+            this.comboBox1.Size = new System.Drawing.Size(294, 28);
             this.comboBox1.TabIndex = 6;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(369, 393);
+            this.btnCancelar.Location = new System.Drawing.Point(415, 491);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(84, 29);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -109,18 +116,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 80);
+            this.label2.Location = new System.Drawing.Point(44, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Apellido";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 145);
+            this.label3.Location = new System.Drawing.Point(44, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Telefono";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -128,45 +135,46 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 205);
+            this.label4.Location = new System.Drawing.Point(44, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
+            this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Email";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 278);
+            this.label5.Location = new System.Drawing.Point(44, 348);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 16);
+            this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Dirección";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 347);
+            this.label6.Location = new System.Drawing.Point(44, 434);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 16);
+            this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Categoria";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(182, 393);
+            this.btnGuardar.Location = new System.Drawing.Point(205, 491);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(133, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(150, 29);
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "Guardar Contacto";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.button2_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmAgregarContacto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 450);
+            this.ClientSize = new System.Drawing.Size(710, 562);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -181,6 +189,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmAgregarContacto";
             this.Text = "FrmAgregarContacto";
             this.ResumeLayout(false);
