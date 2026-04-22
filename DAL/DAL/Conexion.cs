@@ -8,7 +8,7 @@ namespace AgendaContactos.DAL
     {
         public SqlConnection ObtenerConexion()
         {
-            // Lee la cadena 'conexionBD' que pusimos en el App.config
+            // Lee la cadena 'conexionBD' en el App.config
             string connectionString = ConfigurationManager.ConnectionStrings["conexionBD"]?.ConnectionString;
 
             if (string.IsNullOrWhiteSpace(connectionString))

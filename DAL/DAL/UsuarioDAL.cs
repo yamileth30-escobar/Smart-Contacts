@@ -1,5 +1,4 @@
-﻿using Agenda.EL;
-using AgendaContactos.EL;
+﻿using AgendaContactos.EL;
 using System;
 using System.Data.SqlClient;
 
@@ -50,6 +49,6 @@ namespace AgendaContactos.DAL
             }
         }
 
-        // ELIMINÉ EL BLOQUE QUE ESTABA AQUÍ ABAJO PORQUE ESTABA REPETIDO
+        
     }
 }

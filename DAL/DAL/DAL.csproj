@@ -56,12 +56,8 @@
   <ItemGroup>
     <Compile Include="CategoriaDAL.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="Contacto.cs" />
     <Compile Include="ContactoDAL.cs" />
-    <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 using AgendaContactos.EL;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -8,11 +9,12 @@ namespace AgendaContactos.DAL
     {
         private readonly Conexion conexion = new Conexion();
 
+        // 1. LISTAR SIRVE PARA MOSTRAR LOS CONTACTOS EN EL DATAGRIDVIEW
         public DataTable Listar()
         {
             using (SqlConnection con = conexion.ObtenerConexion())
             using (SqlDataAdapter da = new SqlDataAdapter(
-                "SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos ORDER BY Id DESC", con))
+                "SELECT Id, Nombre, Apellido, Telefono, Correo, CategoriaId FROM Contactos ORDER BY Id DESC", con))
             {
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -20,39 +22,46 @@ namespace AgendaContactos.DAL
             }
         }
 
-        public void Insertar(Contacto c)
+        // 2. INSERTAR GUARDAR UN NUEVO CONTACTO EN LA BASE DE DATOS
+        public void Insertar(ContactoEL c)
         {
             using (SqlConnection con = conexion.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Contactos (Nombre, Telefono, Correo, Categoria) VALUES (@n, @t, @c, @d)", con))
+                "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo, CategoriaId, UsuarioId) VALUES (@n, @a, @t, @c, @cat, @u)", con))
             {
+                // El operador ?? evita que el programa falle si un campo está vacío
                 cmd.Parameters.AddWithValue("@n", c.Nombre ?? string.Empty);
+                cmd.Parameters.AddWithValue("@a", c.Apellido ?? string.Empty);
                 cmd.Parameters.AddWithValue("@t", c.Telefono ?? string.Empty);
                 cmd.Parameters.AddWithValue("@c", c.Correo ?? string.Empty);
-                cmd.Parameters.AddWithValue("@d", c.Categoria ?? string.Empty);
+                cmd.Parameters.AddWithValue("@cat", c.CategoriaId);
+                cmd.Parameters.AddWithValue("@u", c.UsuarioId);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
         }
 
-        public void Actualizar(Contacto c)
+        // 3. ACTUALIZAR EDITAR UN CONTACTO EXISTENTE EN LA BASE DE DATOS
+        public void Actualizar(ContactoEL c)
         {
             using (SqlConnection con = conexion.ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(
-                "UPDATE Contactos SET Nombre=@n, Telefono=@t, Correo=@c, Categoria=@d WHERE Id=@id", con))
+                "UPDATE Contactos SET Nombre=@n, Apellido=@a, Telefono=@t, Correo=@c, CategoriaId=@cat WHERE Id=@id", con))
             {
                 cmd.Parameters.AddWithValue("@id", c.Id);
                 cmd.Parameters.AddWithValue("@n", c.Nombre ?? string.Empty);
+                cmd.Parameters.AddWithValue("@a", c.Apellido ?? string.Empty);
                 cmd.Parameters.AddWithValue("@t", c.Telefono ?? string.Empty);
                 cmd.Parameters.AddWithValue("@c", c.Correo ?? string.Empty);
-                cmd.Parameters.AddWithValue("@d", c.Categoria ?? string.Empty);
+                cmd.Parameters.AddWithValue("@cat", c.CategoriaId);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
         }
 
+        // 4. ELIMINAR UN CONTACTO DE LA BASE DE DATOS
         public void Eliminar(int id)
         {
             using (SqlConnection con = conexion.ObtenerConexion())
@@ -66,19 +75,7 @@ namespace AgendaContactos.DAL
 
         public DataTable Buscar(string valor)
         {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            using (SqlDataAdapter da = new SqlDataAdapter(
-                @"SELECT Id, Nombre, Telefono, Correo, Direccion
-                  FROM Contactos
-                  WHERE Nombre LIKE @b OR Telefono LIKE @b OR Correo LIKE @b OR Direccion LIKE @b
-                  ORDER BY Id DESC", con))
-            {
-                da.SelectCommand.Parameters.AddWithValue("@b", "%" + valor + "%");
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
+            throw new NotImplementedException();
         }
     }
 }
