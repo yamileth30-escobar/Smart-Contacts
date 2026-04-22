@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using AgendaContactos.EL;
 using AgendaContactos.DAL;
 
@@ -11,19 +6,16 @@ namespace AgendaContactos.BLL
 {
     public class CategoriaBLL
     {
-        CategoriaDAL dal = new CategoriaDAL();
+        private CategoriaDAL dal = new CategoriaDAL();
 
-        public void Guardar(Categoria entidad)
+        public void Guardar(CategoriaEL entidad)
         {
-            if (!string.IsNullOrEmpty(entidad.NombreCategoria))
+            if (!string.IsNullOrEmpty(entidad.Nombre))
             {
                 dal.Insertar(entidad);
             }
         }
 
-        public DataTable Listar()
-        {
-            return dal.Listar();
-        }
+        public DataTable Listar() => dal.Listar();
     }
 }
