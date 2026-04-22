@@ -13,7 +13,7 @@ namespace AgendaContactos.EL
         public string Apellido { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
-        public string Categoria { get; set; }
+        public int CategoriaId { get; set; }
         public int UsuarioId { get; set; }
     }
 }
