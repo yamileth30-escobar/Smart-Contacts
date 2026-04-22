@@ -117,7 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ClienteId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr0AAA69AUf7kK0AAAAHdElNRQfqBBABJC+FadXTAAAA
+        GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAW5JREFUOE91k80qRlEYhU20LsEtMTNx
+        B0opA8VUwgwTUqKUmakyk7SuA2XAUH5K8pOl5+vd2j4M3s7Z5+z32WutvfdIrJGuRmNNxDqKdRPrPdZH
+        vfONf8z57umbx2JtxbqPlX/qIdZ2zf0B4MPxHw19oeY21lvNHUCabFYebujrJdZarNlYmwWhZxQAvpCN
+        15NYu7H2qvZrvBhrJtZSQVCCnQkAhMMq17HmYp3GOot1XsDJWDulAghKWIyeIwAkzOAi1monG5kbsQ6r
+        AQhKALU5NwAIh8FlrJVYn7GeY63HOqj/QFCCnT6b978AvON/qrIBghLskMkvQLPQAK+xFmJNFwQl2CET
+        wD1gYKGFCIAMHitM/NKAHf4T7DBgECLbSNNVrOWy9FRKmEQmPNmdPgPsDbaRg8TxvIs1XxCUYKcVY1SR
+        QwN8H6T+KANBCXaGi3PS9v/HUe4hKMFO77MvZLPyr8vUCjvjQ9eZ+vc6fwGoCHBz+BaiigAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Eliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr4AAA6+AepCscAAAAAHdElNRQfqBBABJC+FadXTAAAA
+        GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAATdJREFUOE+dk69Og0EQxGv6DDzFODRZ
+        2XqeAiQ4HoA/DhSgQLU4ICEIsLwIVI0AQ4JoAuTX7DXXr/eFBDHJZmd2bvdub2DFoMLQirEVUytmVswT
+        xBMrRqlZ1tTFG1acWfFhxU8P3q04Te2KAYm7RkEfbotJaZuTu6JrK3YSxF2eToYYMHNp+9uKZyvOrdi0
+        YitBTA4ODVrGGWHAhRVXyCsr9qw4tOIkQUwOrhiACQbccN3aTZ72acVrgpgcXK2dYcAz1ckLK46seLTi
+        IEFMDq7WzlsGl1YcW3FvxX6CmBzcmkF3hNqAuUGfwWKE+hJBGeHNipcEh7RGmHafETxYsZ1zPyWIycEV
+        HTXj1iJ9Zass0G6CmBxc0VGzWKT/rDLa5SrXJn99Jjg0a5+pgHH4sq3vTI77WvnOv5B1AhpkrK7uAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="clienteIdDataGridViewTextBoxColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Nombres.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -126,16 +160,15 @@
   <metadata name="Apellidos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Dui.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Telefono.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Correo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Categoria.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIADQYwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv

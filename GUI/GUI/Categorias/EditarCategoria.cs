@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AgendaContactos.GUI.Contactos
+namespace AgendaContactos.GUI.Categorias
 {
-    public partial class RegistrarContacto : Form
+    public partial class EditarCategoria : Form
     {
-        public RegistrarContacto()
+        public EditarCategoria()
         {
             InitializeComponent();
         }

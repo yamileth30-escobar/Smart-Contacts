@@ -5,7 +5,7 @@ namespace AgendaContactos.GUI.Autenticacion
 {
     public partial class Login : Form
     {
-        // 1.Es la que guardará el nombre "yami"
+        // 1.Es la que guardará el nombre "admin"
         public string UsuarioLogueado { get; set; }
 
         public Login()
@@ -16,7 +16,7 @@ namespace AgendaContactos.GUI.Autenticacion
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             // Validar las credenciales
-            if (txtUsuario.Text.Trim().Equals("yami") && txtContraseña.Text.Trim().Equals("tokio25"))
+            if (txtUsuario.Text.Trim().Equals("admin") && txtContraseña.Text.Trim().Equals("123"))
             {
                 // 2.Guardamos el texto del cuadro antes de cerrar
                 this.UsuarioLogueado = txtUsuario.Text.Trim();

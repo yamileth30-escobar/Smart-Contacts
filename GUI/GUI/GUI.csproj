@@ -56,17 +56,17 @@
     <Compile Include="Autenticacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categorias\EditarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias\EditarCategoria.Designer.cs">
+      <DependentUpon>EditarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Categorias\ListadoCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Categorias\ListadoCategorias.Designer.cs">
       <DependentUpon>ListadoCategorias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Categorias\RegistrarCategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Categorias\RegistrarCategoria.Designer.cs">
-      <DependentUpon>RegistrarCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Contactos\GestionContactos.cs">
       <SubType>Form</SubType>
@@ -101,11 +101,11 @@
     <EmbeddedResource Include="Autenticacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Categorias\EditarCategoria.resx">
+      <DependentUpon>EditarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Categorias\ListadoCategorias.resx">
       <DependentUpon>ListadoCategorias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Categorias\RegistrarCategoria.resx">
-      <DependentUpon>RegistrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contactos\GestionContactos.resx">
       <DependentUpon>GestionContactos.cs</DependentUpon>
