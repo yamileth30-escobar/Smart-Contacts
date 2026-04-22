@@ -49,20 +49,23 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.txtBusqueda.Location = new System.Drawing.Point(141, 0);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(100, 26);
+            this.txtBusqueda.Size = new System.Drawing.Size(381, 26);
             this.txtBusqueda.TabIndex = 1;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(247, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(528, 0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 26);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 37);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dvgResultado
             // 
+            this.dvgResultado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgResultado.Location = new System.Drawing.Point(-3, 43);
             this.dvgResultado.Name = "dvgResultado";
