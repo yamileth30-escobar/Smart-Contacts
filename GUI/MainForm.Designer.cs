@@ -115,6 +115,7 @@ namespace GUI
             this.editarContactoToolStripMenuItem.Name = "editarContactoToolStripMenuItem";
             this.editarContactoToolStripMenuItem.Size = new System.Drawing.Size(312, 34);
             this.editarContactoToolStripMenuItem.Text = "Editar Contacto";
+            this.editarContactoToolStripMenuItem.Visible = false;
             this.editarContactoToolStripMenuItem.Click += new System.EventHandler(this.editarContactoToolStripMenuItem_Click);
             // 
             // eliminarContactoToolStripMenuItem
@@ -122,6 +123,7 @@ namespace GUI
             this.eliminarContactoToolStripMenuItem.Name = "eliminarContactoToolStripMenuItem";
             this.eliminarContactoToolStripMenuItem.Size = new System.Drawing.Size(312, 34);
             this.eliminarContactoToolStripMenuItem.Text = "Eliminar Contacto";
+            this.eliminarContactoToolStripMenuItem.Visible = false;
             this.eliminarContactoToolStripMenuItem.Click += new System.EventHandler(this.eliminarContactoToolStripMenuItem_Click);
             // 
             // categoríasToolStripMenuItem
@@ -178,6 +180,7 @@ namespace GUI
             this.Name = "MainForm";
             this.Text = "Smart Contacts";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

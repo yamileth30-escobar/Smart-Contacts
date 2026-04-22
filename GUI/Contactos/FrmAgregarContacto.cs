@@ -19,7 +19,7 @@ namespace AgendaContactos.GUI.Contactos
       // 1. Validación: Que no dejen el nombre vacío
       if (string.IsNullOrWhiteSpace(textBox1.Text))
       {
-        MessageBox.Show("El nombre es obligatorio, maje.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MessageBox.Show("El nombre es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return;
       }
 

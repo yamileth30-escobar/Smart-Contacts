@@ -73,6 +73,8 @@ namespace AgendaContactos.GUI.Contactos
             this.dvgResultado.RowTemplate.Height = 28;
             this.dvgResultado.Size = new System.Drawing.Size(801, 404);
             this.dvgResultado.TabIndex = 3;
+            this.dvgResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgResultado_CellContentClick);
+            this.dvgResultado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultado_CellDoubleClick);
             // 
             // FrmBuscarContacto
             // 

@@ -105,6 +105,7 @@ namespace AgendaContactos.GUI.Contactos
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(415, 491);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
@@ -175,6 +176,7 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(710, 562);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label6);

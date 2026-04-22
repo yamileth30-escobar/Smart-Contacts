@@ -62,7 +62,7 @@ namespace GUI
     // 4. Editar (Agregado)
     private void editarContactoToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      IdLid frm = new IdLid();
+      FrmEditarContacto frm = new FrmEditarContacto();
       frm.MdiParent = this;
       frm.Show();
     }
@@ -92,5 +92,13 @@ namespace GUI
     {
       // Se deja vacío para evitar errores del diseñador visual
     }
+
+  
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      // Esto mata el proceso completo de la agenda
+      Application.Exit();
+    }
   }
+  
 }

@@ -1,6 +1,6 @@
 namespace AgendaContactos.GUI.Contactos
 {
-  partial class IdLid
+  partial class FrmEditarContacto
   {
     /// <summary>
     /// Required designer variable.
@@ -37,6 +37,8 @@ namespace AgendaContactos.GUI.Contactos
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.texTelefono = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LdLid
@@ -55,7 +57,6 @@ namespace AgendaContactos.GUI.Contactos
             this.txtIdEditar.ReadOnly = true;
             this.txtIdEditar.Size = new System.Drawing.Size(366, 26);
             this.txtIdEditar.TabIndex = 1;
-            this.txtIdEditar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtNombre
             // 
@@ -97,7 +98,6 @@ namespace AgendaContactos.GUI.Contactos
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(366, 26);
             this.txtApellido.TabIndex = 6;
-            this.txtApellido.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // texTelefono
             // 
@@ -114,12 +114,40 @@ namespace AgendaContactos.GUI.Contactos
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar Datos.";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // IdLid
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(577, 406);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(211, 41);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminar.Location = new System.Drawing.Point(498, 220);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(290, 58);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar Cpntacto";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // FrmEditarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.texTelefono);
             this.Controls.Add(this.txtApellido);
@@ -129,9 +157,9 @@ namespace AgendaContactos.GUI.Contactos
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtIdEditar);
             this.Controls.Add(this.LdLid);
-            this.Name = "IdLid";
+            this.Name = "FrmEditarContacto";
             this.Text = "ID Contacto";
-            this.Load += new System.EventHandler(this.IdLid_Load);
+            this.Load += new System.EventHandler(this.FrmEditarContacto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,13 +168,15 @@ namespace AgendaContactos.GUI.Contactos
     #endregion
 
     private System.Windows.Forms.Label LdLid;
-    private System.Windows.Forms.TextBox txtIdEditar;
-    private System.Windows.Forms.TextBox txtNombre;
     private System.Windows.Forms.Label IdLNombre;
     private System.Windows.Forms.Label IblApellido;
     private System.Windows.Forms.Label IblTelefono;
-    private System.Windows.Forms.TextBox txtApellido;
-    private System.Windows.Forms.TextBox texTelefono;
     private System.Windows.Forms.Button btnActualizar;
+    public System.Windows.Forms.TextBox txtIdEditar;
+    public System.Windows.Forms.TextBox txtNombre;
+    public System.Windows.Forms.TextBox txtApellido;
+    public System.Windows.Forms.TextBox texTelefono;
+    private System.Windows.Forms.Button btnCancelar;
+    private System.Windows.Forms.Button btnEliminar;
   }
 }

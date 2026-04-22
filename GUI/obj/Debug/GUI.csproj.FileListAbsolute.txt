@@ -17,7 +17,7 @@ C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.Autenticacion.Login.resources
 C:\GITHUB\GUI\obj\Debug\Categorias.FrmGestionarCategorias.resources
 C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.Contactos.FrmAgregarContacto.resources
 C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.Contactos.FrmBuscarContacto.resources
-C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.Contactos.IdLid.resources
+C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.Contactos.FrmEditarContacto.resources
 C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.Contactos.FrmEliminarContacto.resources
 C:\GITHUB\GUI\obj\Debug\GUI.Contactos.FrmListaContactos.resources
 C:\GITHUB\GUI\obj\Debug\AgendaContactos.GUI.LoginForm.resources

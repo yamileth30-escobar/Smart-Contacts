@@ -20,7 +20,7 @@ namespace AgendaContactos.GUI.Contactos
       // 1. Validamos el cuadro de texto (txtBusqueda)
       if (string.IsNullOrWhiteSpace(txtBusqueda.Text))
       {
-        MessageBox.Show("Escribí al menos una letra para buscar, maje.", "Aviso");
+        MessageBox.Show("Escribí al menos una letra para buscar", "Aviso");
         return;
       }
 
@@ -64,5 +64,32 @@ namespace AgendaContactos.GUI.Contactos
 
     private void label1_Click(object sender, EventArgs e) { }
     private void txtBusqueda_TextChanged(object sender, EventArgs e) { }
+
+    private void dvgResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
+
+     private void dgvResultado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+      // 1. Verificamos que no hayas dado clic en el encabezado (fila -1)
+      if (e.RowIndex >= 0)
+      {
+        // 2. Creamos la instancia de la ventana de editar
+        FrmEditarContacto frm = new FrmEditarContacto();
+
+        // 3. Pasamos los datos usando el nombre correcto: dvgResultado
+        frm.txtIdEditar.Text = dvgResultado.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+        frm.txtNombre.Text = dvgResultado.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+        frm.txtApellido.Text = dvgResultado.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
+        frm.texTelefono.Text = dvgResultado.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
+        // 4. Mostramos la ventana de editar
+        frm.ShowDialog();
+
+        // 5. Cuando cerrés la ventana de editar, refrescamos la tabla para ver los cambios
+        btnBuscar_Click(null, null);
+      }
+    }
   }
+  
 }
