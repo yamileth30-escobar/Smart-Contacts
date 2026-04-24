@@ -17,7 +17,7 @@ namespace AgendaContactos.DAL
     {
       DataTable dt = new DataTable();
       // Usamos 'conector' en lugar de 'Conexion'
-      using (SqlConnection con = conector.ObtenerConexion())
+      using (SqlConnection con = Conexion.ObtenerConexion())
       {
         using (SqlDataAdapter da = new SqlDataAdapter("SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos ORDER BY Id DESC", con))
         {
@@ -31,7 +31,7 @@ namespace AgendaContactos.DAL
     // Esto arregla el error CS0104 (Referencia ambigua)
     public void Insertar(AgendaContactos.EL.Contacto c)
     {
-      using (SqlConnection con = conector.ObtenerConexion())
+      using (SqlConnection con = Conexion.ObtenerConexion())
       {
         string sql = "INSERT INTO Contactos (Nombre, Telefono, Correo, Direccion) VALUES (@n, @t, @c, @d)";
         using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -49,7 +49,7 @@ namespace AgendaContactos.DAL
 
     public void Actualizar(AgendaContactos.EL.Contacto c)
     {
-      using (SqlConnection con = conector.ObtenerConexion())
+      using (SqlConnection con = Conexion.ObtenerConexion())
       {
         string sql = "UPDATE Contactos SET Nombre=@n, Telefono=@t, Correo=@c, Direccion=@d WHERE Id=@id";
         using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -68,7 +68,7 @@ namespace AgendaContactos.DAL
 
     public void Eliminar(int id)
     {
-      using (SqlConnection con = conector.ObtenerConexion())
+      using (SqlConnection con = Conexion.ObtenerConexion())
       {
         string sql = "DELETE FROM Contactos WHERE Id=@id";
         using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -83,7 +83,7 @@ namespace AgendaContactos.DAL
     public DataTable Buscar(string valor)
     {
       DataTable dt = new DataTable();
-      using (SqlConnection con = conector.ObtenerConexion())
+      using (SqlConnection con = Conexion.ObtenerConexion())
       {
         string sql = "SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos " +
                      "WHERE Nombre LIKE @b OR Telefono LIKE @b OR Correo LIKE @b OR Direccion LIKE @b " +

@@ -7,15 +7,13 @@ namespace AgendaContactos.DAL
 {
   public class UsuarioDALBase
   {
-
+    // Método para crear el usuario por defecto si no existe
     public void AsegurarUsuarioPorDefecto()
     {
-
       using (SqlConnection con = Conexion.ObtenerConexion())
       {
         con.Open();
 
-        // Verificamos si existe el usuario "yamileth"
         string checkSql = "SELECT COUNT(*) FROM Usuarios WHERE Username=@u";
         int existe = 0;
 
@@ -25,7 +23,6 @@ namespace AgendaContactos.DAL
           existe = Convert.ToInt32(cmdCheck.ExecuteScalar());
         }
 
-        // Si no existe, lo insertamos
         if (existe == 0)
         {
           string insertSql = "INSERT INTO Usuarios (Username, Password) VALUES (@u, @p)";
@@ -39,40 +36,24 @@ namespace AgendaContactos.DAL
       }
     }
 
-    // Se eliminó la variable "private readonly Conexion conexion" porque no es necesaria
-
+    // Método para validar el Login
     public bool Login(Usuario u)
     {
-      // Cambiado a Conexion.ObtenerConexion() (Estático)
+      // Usamos directamente la clase Conexion que ya tenés en tu proyecto
       using (SqlConnection con = Conexion.ObtenerConexion())
-      {
-
-        // 1. Creamos la "llave" para entrar a la base de datos
-        // Esto arregla el error de "referencia de objeto para el campo no estático"
-        Conexion conexion = new Conexion();
-        Conexion conector = conexion;
-      }
-    public bool Login(Usuario u)
-    {
-      // 2. Usamos 'conector' (el objeto) en lugar de 'Conexion' (la clase)
-      using (SqlConnection con = conector.ObtenerConexion())
-
       {
         con.Open();
         string sql = "SELECT COUNT(*) FROM Usuarios WHERE Username=@u AND Password=@p";
 
         using (SqlCommand cmd = new SqlCommand(sql, con))
         {
-
-          cmd.Parameters.AddWithValue("@u", u.Username);
-          cmd.Parameters.AddWithValue("@p", u.Password);
-
-          // Asegúrate de que los nombres de las propiedades coincidan con tu clase Usuario
-          cmd.Parameters.AddWithValue("@u", u.Username ?? string.Empty);
-          cmd.Parameters.AddWithValue("@p", u.Password ?? string.Empty);
-
+          // Usamos ?? "" para evitar errores si el usuario manda datos vacíos
+          cmd.Parameters.AddWithValue("@u", u.Username ?? "");
+          cmd.Parameters.AddWithValue("@p", u.Password ?? "");
 
           int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+          // Si count > 0 devuelve true, si no, devuelve false
           return count > 0;
         }
       }

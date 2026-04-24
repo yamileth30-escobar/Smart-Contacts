@@ -3,25 +3,19 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-  internal class Conexion
+  // Cambiamos 'internal' por 'public' para que todos puedan ver la clase
+  public class Conexion
   {
-    // Esta es la llave que abre tu base de datos
-    // Usamos .\SQL como me dijiste
-    private string cadena = @"Data Source=.\SQL;Initial Catalog=AgendaContactos;Integrated Security=True";
-
-    public Conexion(string cadena)
-    {
-      this.cadena = cadena;
-    }
+    // Tu cadena de conexión hacia el servidor SQL
+    private static string cadena = @"Data Source=.\SQL;Initial Catalog=AgendaContactos;Integrated Security=True";
 
     public Conexion()
     {
     }
 
-    // Este es el método que tus compañeros dejaron vacío
-     SqlConnection ObtenerConexion()
+    // AGREGAMOS 'public static': Esto es lo que quita los 10 errores de un solo
+    public static SqlConnection ObtenerConexion()
     {
-      // Aquí devolvemos la conexión real hacia tu servidor
       return new SqlConnection(cadena);
     }
   }
