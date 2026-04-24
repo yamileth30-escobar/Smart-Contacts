@@ -99,6 +99,25 @@ namespace GUI
       // Esto mata el proceso completo de la agenda
       Application.Exit();
     }
+
+    private void MainForm_Load_1(object sender, EventArgs e)
+    {
+      // Esto busca el contenedor gris y le pega tu imagen de fondo
+      foreach (Control ctl in this.Controls)
+      {
+        if (ctl is MdiClient)
+        {
+          ctl.BackgroundImage = this.BackgroundImage;
+          ctl.BackgroundImageLayout = ImageLayout.Stretch;
+          break;
+        }
+      }
+    }
+
+    private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+    {
+
+    }
   }
   
 }

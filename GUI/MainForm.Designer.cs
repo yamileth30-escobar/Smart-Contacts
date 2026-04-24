@@ -28,6 +28,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +49,8 @@ namespace GUI
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -62,11 +65,14 @@ namespace GUI
             this.menuStrip1.Size = new System.Drawing.Size(900, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivoToolStripMenuItem
             // 
+            this.archivoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -74,17 +80,19 @@ namespace GUI
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(147, 34);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // contactosToolStripMenuItem
             // 
+            this.contactosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.contactosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarNuevoContactoToolStripMenuItem,
             this.verListaDeContactoToolStripMenuItem,
             this.buscarContactoToolStripMenuItem,
             this.editarContactoToolStripMenuItem,
             this.eliminarContactoToolStripMenuItem});
+            this.contactosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.contactosToolStripMenuItem.Name = "contactosToolStripMenuItem";
             this.contactosToolStripMenuItem.Size = new System.Drawing.Size(108, 29);
             this.contactosToolStripMenuItem.Text = "Contactos";
@@ -128,8 +136,10 @@ namespace GUI
             // 
             // categoríasToolStripMenuItem
             // 
+            this.categoríasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.categoríasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionarCategoríasToolStripMenuItem});
+            this.categoríasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
             this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
             this.categoríasToolStripMenuItem.Text = "Categorías";
@@ -142,8 +152,10 @@ namespace GUI
             // 
             // herramientasToolStripMenuItem
             // 
+            this.herramientasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuraciónToolStripMenuItem});
+            this.herramientasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(133, 29);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
@@ -151,13 +163,15 @@ namespace GUI
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // ayudaToolStripMenuItem
             // 
+            this.ayudaToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acercaDeSmartContactsToolStripMenuItem});
+            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
@@ -172,6 +186,9 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -181,6 +198,7 @@ namespace GUI
             this.Text = "Smart Contacts";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

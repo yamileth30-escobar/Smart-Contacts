@@ -28,6 +28,7 @@ namespace AgendaContactos.GUI.Contactos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuscarContacto));
             this.IblInstruccion = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@ namespace AgendaContactos.GUI.Contactos
             // IblInstruccion
             // 
             this.IblInstruccion.AutoSize = true;
+            this.IblInstruccion.BackColor = System.Drawing.Color.Transparent;
+            this.IblInstruccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IblInstruccion.Location = new System.Drawing.Point(1, 0);
             this.IblInstruccion.Name = "IblInstruccion";
             this.IblInstruccion.Size = new System.Drawing.Size(138, 20);
@@ -55,12 +58,14 @@ namespace AgendaContactos.GUI.Contactos
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Location = new System.Drawing.Point(528, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 37);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dvgResultado
@@ -80,6 +85,7 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dvgResultado);
             this.Controls.Add(this.btnBuscar);
