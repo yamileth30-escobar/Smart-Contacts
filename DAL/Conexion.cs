@@ -1,15 +1,28 @@
-using System.Configuration;
+using System;
 using System.Data.SqlClient;
 
-namespace AgendaContactos.DAL
+namespace DAL
 {
+  internal class Conexion
+  {
+    // Esta es la llave que abre tu base de datos
+    // Usamos .\SQL como me dijiste
+    private string cadena = @"Data Source=.\SQL;Initial Catalog=AgendaContactos;Integrated Security=True";
 
-    public class Conexion
+    public Conexion(string cadena)
     {
-        public static SqlConnection ObtenerConexion()
-        {
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["AgendaContactos"].ConnectionString;
-            return new SqlConnection(cadenaConexion);
-        }
+      this.cadena = cadena;
     }
+
+    public Conexion()
+    {
+    }
+
+    // Este es el método que tus compañeros dejaron vacío
+     SqlConnection ObtenerConexion()
+    {
+      // Aquí devolvemos la conexión real hacia tu servidor
+      return new SqlConnection(cadena);
+    }
+  }
 }

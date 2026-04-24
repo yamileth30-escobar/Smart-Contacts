@@ -28,6 +28,7 @@ namespace AgendaContactos.GUI.Contactos
     /// </summary>
     private void InitializeComponent()
     {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarContacto));
             this.LdLid = new System.Windows.Forms.Label();
             this.txtIdEditar = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -44,6 +45,8 @@ namespace AgendaContactos.GUI.Contactos
             // LdLid
             // 
             this.LdLid.AutoSize = true;
+            this.LdLid.BackColor = System.Drawing.Color.Transparent;
+            this.LdLid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LdLid.Location = new System.Drawing.Point(-2, 9);
             this.LdLid.Name = "LdLid";
             this.LdLid.Size = new System.Drawing.Size(99, 20);
@@ -68,6 +71,8 @@ namespace AgendaContactos.GUI.Contactos
             // IdLNombre
             // 
             this.IdLNombre.AutoSize = true;
+            this.IdLNombre.BackColor = System.Drawing.Color.Transparent;
+            this.IdLNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IdLNombre.Location = new System.Drawing.Point(-2, 60);
             this.IdLNombre.Name = "IdLNombre";
             this.IdLNombre.Size = new System.Drawing.Size(69, 20);
@@ -77,6 +82,8 @@ namespace AgendaContactos.GUI.Contactos
             // IblApellido
             // 
             this.IblApellido.AutoSize = true;
+            this.IblApellido.BackColor = System.Drawing.Color.Transparent;
+            this.IblApellido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IblApellido.Location = new System.Drawing.Point(-2, 105);
             this.IblApellido.Name = "IblApellido";
             this.IblApellido.Size = new System.Drawing.Size(69, 20);
@@ -86,6 +93,8 @@ namespace AgendaContactos.GUI.Contactos
             // IblTelefono
             // 
             this.IblTelefono.AutoSize = true;
+            this.IblTelefono.BackColor = System.Drawing.Color.Transparent;
+            this.IblTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IblTelefono.Location = new System.Drawing.Point(-2, 159);
             this.IblTelefono.Name = "IblTelefono";
             this.IblTelefono.Size = new System.Drawing.Size(75, 20);
@@ -108,23 +117,27 @@ namespace AgendaContactos.GUI.Contactos
             // 
             // btnActualizar
             // 
+            this.btnActualizar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.Location = new System.Drawing.Point(2, 406);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(211, 41);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar Datos.";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.MediumPurple;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Location = new System.Drawing.Point(577, 406);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(211, 41);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
@@ -144,6 +157,7 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnEliminar);

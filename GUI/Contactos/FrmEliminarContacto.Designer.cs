@@ -28,6 +28,7 @@ namespace AgendaContactos.GUI.Contactos
     /// </summary>
     private void InitializeComponent()
     {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEliminarContacto));
             this.IBLIdBorrar = new System.Windows.Forms.Label();
             this.txtIdEliminar = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -36,6 +37,8 @@ namespace AgendaContactos.GUI.Contactos
             // IBLIdBorrar
             // 
             this.IBLIdBorrar.AutoSize = true;
+            this.IBLIdBorrar.BackColor = System.Drawing.Color.Transparent;
+            this.IBLIdBorrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IBLIdBorrar.Location = new System.Drawing.Point(12, 30);
             this.IBLIdBorrar.Name = "IBLIdBorrar";
             this.IBLIdBorrar.Size = new System.Drawing.Size(185, 20);
@@ -65,6 +68,7 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtIdEliminar);

@@ -32,6 +32,7 @@ namespace GUI.Contactos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListaContactos));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvContactos = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -45,7 +46,9 @@ namespace GUI.Contactos
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(36, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 38);
@@ -72,63 +75,74 @@ namespace GUI.Contactos
             // 
             // btnActualizar
             // 
+            this.btnActualizar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.Location = new System.Drawing.Point(58, 502);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(84, 29);
+            this.btnActualizar.Size = new System.Drawing.Size(84, 47);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnNuevo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevo.Location = new System.Drawing.Point(199, 502);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(137, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(137, 47);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo Contacto";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.Location = new System.Drawing.Point(387, 502);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(84, 29);
+            this.btnEditar.Size = new System.Drawing.Size(84, 47);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
             this.btnEliminar.Location = new System.Drawing.Point(555, 502);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(84, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(84, 47);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Black;
             this.btnCerrar.Location = new System.Drawing.Point(708, 502);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(84, 29);
+            this.btnCerrar.Size = new System.Drawing.Size(84, 47);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // FrmListaContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
