@@ -44,6 +44,16 @@ namespace GUI
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeSmartContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.respaldoDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.respaldoDeDatosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.restaurarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualDeUusuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verEstadisticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calendarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +81,13 @@ namespace GUI
             // 
             this.archivoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.cerrarSesionToolStripMenuItem,
+            this.respaldoDeDatosToolStripMenuItem,
+            this.respaldoDeDatosToolStripMenuItem1,
+            this.restaurarBaseDeDatosToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.salirToolStripMenuItem1});
             this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
@@ -80,8 +96,9 @@ namespace GUI
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.salirToolStripMenuItem.Text = "Configuracion del Servidor";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // contactosToolStripMenuItem
             // 
@@ -138,7 +155,8 @@ namespace GUI
             // 
             this.categoríasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.categoríasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarCategoríasToolStripMenuItem});
+            this.gestionarCategoríasToolStripMenuItem,
+            this.verEstadisticaToolStripMenuItem});
             this.categoríasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
             this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
@@ -149,12 +167,15 @@ namespace GUI
             this.gestionarCategoríasToolStripMenuItem.Name = "gestionarCategoríasToolStripMenuItem";
             this.gestionarCategoríasToolStripMenuItem.Size = new System.Drawing.Size(278, 34);
             this.gestionarCategoríasToolStripMenuItem.Text = "Gestionar Categorías";
+            this.gestionarCategoríasToolStripMenuItem.Click += new System.EventHandler(this.gestionarCategoríasToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraciónToolStripMenuItem});
+            this.configuraciónToolStripMenuItem,
+            this.calculadoraToolStripMenuItem,
+            this.calendarioToolStripMenuItem});
             this.herramientasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(133, 29);
@@ -164,13 +185,15 @@ namespace GUI
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            this.configuraciónToolStripMenuItem.Text = "Bitacora de Sistema";
+            this.configuraciónToolStripMenuItem.Click += new System.EventHandler(this.configuraciónToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acercaDeSmartContactsToolStripMenuItem});
+            this.acercaDeSmartContactsToolStripMenuItem,
+            this.manualDeUusuarioToolStripMenuItem});
             this.ayudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
@@ -181,6 +204,74 @@ namespace GUI
             this.acercaDeSmartContactsToolStripMenuItem.Name = "acercaDeSmartContactsToolStripMenuItem";
             this.acercaDeSmartContactsToolStripMenuItem.Size = new System.Drawing.Size(317, 34);
             this.acercaDeSmartContactsToolStripMenuItem.Text = "Acerca de Smart Contacts";
+            this.acercaDeSmartContactsToolStripMenuItem.Click += new System.EventHandler(this.acercaDeSmartContactsToolStripMenuItem_Click);
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion ";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
+            // respaldoDeDatosToolStripMenuItem
+            // 
+            this.respaldoDeDatosToolStripMenuItem.Name = "respaldoDeDatosToolStripMenuItem";
+            this.respaldoDeDatosToolStripMenuItem.Size = new System.Drawing.Size(322, 6);
+            this.respaldoDeDatosToolStripMenuItem.Click += new System.EventHandler(this.respaldoDeDatosToolStripMenuItem_Click);
+            // 
+            // respaldoDeDatosToolStripMenuItem1
+            // 
+            this.respaldoDeDatosToolStripMenuItem1.Name = "respaldoDeDatosToolStripMenuItem1";
+            this.respaldoDeDatosToolStripMenuItem1.Size = new System.Drawing.Size(325, 34);
+            this.respaldoDeDatosToolStripMenuItem1.Text = "Respaldo de Datos";
+            this.respaldoDeDatosToolStripMenuItem1.Click += new System.EventHandler(this.respaldoDeDatosToolStripMenuItem1_Click);
+            // 
+            // restaurarBaseDeDatosToolStripMenuItem
+            // 
+            this.restaurarBaseDeDatosToolStripMenuItem.Name = "restaurarBaseDeDatosToolStripMenuItem";
+            this.restaurarBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.restaurarBaseDeDatosToolStripMenuItem.Text = "Restaurar Base de Datos";
+            this.restaurarBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.restaurarBaseDeDatosToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(322, 6);
+            // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(325, 34);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
+            // 
+            // manualDeUusuarioToolStripMenuItem
+            // 
+            this.manualDeUusuarioToolStripMenuItem.Name = "manualDeUusuarioToolStripMenuItem";
+            this.manualDeUusuarioToolStripMenuItem.Size = new System.Drawing.Size(317, 34);
+            this.manualDeUusuarioToolStripMenuItem.Text = "Manual de Uusuario";
+            this.manualDeUusuarioToolStripMenuItem.Click += new System.EventHandler(this.manualDeUusuarioToolStripMenuItem_Click);
+            // 
+            // verEstadisticaToolStripMenuItem
+            // 
+            this.verEstadisticaToolStripMenuItem.Name = "verEstadisticaToolStripMenuItem";
+            this.verEstadisticaToolStripMenuItem.Size = new System.Drawing.Size(278, 34);
+            this.verEstadisticaToolStripMenuItem.Text = "Ver Estadistica";
+            this.verEstadisticaToolStripMenuItem.Click += new System.EventHandler(this.verEstadisticaToolStripMenuItem_Click);
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
+            // 
+            // calendarioToolStripMenuItem
+            // 
+            this.calendarioToolStripMenuItem.Name = "calendarioToolStripMenuItem";
+            this.calendarioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.calendarioToolStripMenuItem.Text = "Calendario";
+            this.calendarioToolStripMenuItem.Click += new System.EventHandler(this.calendarioToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -223,5 +314,15 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeSmartContactsToolStripMenuItem;
-    }
+    private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+    private System.Windows.Forms.ToolStripSeparator respaldoDeDatosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem respaldoDeDatosToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem restaurarBaseDeDatosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem verEstadisticaToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem manualDeUusuarioToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem calendarioToolStripMenuItem;
+  }
 }

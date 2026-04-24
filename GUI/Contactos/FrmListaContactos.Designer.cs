@@ -80,7 +80,7 @@ namespace GUI.Contactos
             this.btnActualizar.Location = new System.Drawing.Point(58, 502);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(84, 29);
+            this.btnActualizar.Size = new System.Drawing.Size(84, 47);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -93,7 +93,7 @@ namespace GUI.Contactos
             this.btnNuevo.Location = new System.Drawing.Point(199, 502);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(137, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(137, 47);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo Contacto";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -106,7 +106,7 @@ namespace GUI.Contactos
             this.btnEditar.Location = new System.Drawing.Point(387, 502);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(84, 29);
+            this.btnEditar.Size = new System.Drawing.Size(84, 47);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -119,7 +119,7 @@ namespace GUI.Contactos
             this.btnEliminar.Location = new System.Drawing.Point(555, 502);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(84, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(84, 47);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -132,7 +132,7 @@ namespace GUI.Contactos
             this.btnCerrar.Location = new System.Drawing.Point(708, 502);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(84, 29);
+            this.btnCerrar.Size = new System.Drawing.Size(84, 47);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
