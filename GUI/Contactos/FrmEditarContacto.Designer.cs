@@ -40,42 +40,51 @@ namespace AgendaContactos.GUI.Contactos
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LdLid
             // 
             this.LdLid.AutoSize = true;
             this.LdLid.BackColor = System.Drawing.Color.Transparent;
-            this.LdLid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LdLid.Location = new System.Drawing.Point(-2, 9);
+            this.LdLid.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LdLid.ForeColor = System.Drawing.Color.Black;
+            this.LdLid.Location = new System.Drawing.Point(22, 88);
+            this.LdLid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LdLid.Name = "LdLid";
-            this.LdLid.Size = new System.Drawing.Size(99, 20);
+            this.LdLid.Size = new System.Drawing.Size(79, 16);
             this.LdLid.TabIndex = 0;
             this.LdLid.Text = "ID Contacto:";
             // 
             // txtIdEditar
             // 
-            this.txtIdEditar.Location = new System.Drawing.Point(103, 6);
+            this.txtIdEditar.Location = new System.Drawing.Point(105, 87);
+            this.txtIdEditar.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdEditar.Name = "txtIdEditar";
             this.txtIdEditar.ReadOnly = true;
-            this.txtIdEditar.Size = new System.Drawing.Size(366, 26);
+            this.txtIdEditar.Size = new System.Drawing.Size(245, 20);
             this.txtIdEditar.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(103, 54);
+            this.txtNombre.Location = new System.Drawing.Point(105, 118);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(366, 26);
+            this.txtNombre.Size = new System.Drawing.Size(245, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // IdLNombre
             // 
             this.IdLNombre.AutoSize = true;
             this.IdLNombre.BackColor = System.Drawing.Color.Transparent;
-            this.IdLNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IdLNombre.Location = new System.Drawing.Point(-2, 60);
+            this.IdLNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdLNombre.ForeColor = System.Drawing.Color.Black;
+            this.IdLNombre.Location = new System.Drawing.Point(22, 121);
+            this.IdLNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IdLNombre.Name = "IdLNombre";
-            this.IdLNombre.Size = new System.Drawing.Size(69, 20);
+            this.IdLNombre.Size = new System.Drawing.Size(56, 16);
             this.IdLNombre.TabIndex = 3;
             this.IdLNombre.Text = "Nombre:";
             // 
@@ -83,10 +92,12 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.IblApellido.AutoSize = true;
             this.IblApellido.BackColor = System.Drawing.Color.Transparent;
-            this.IblApellido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IblApellido.Location = new System.Drawing.Point(-2, 105);
+            this.IblApellido.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IblApellido.ForeColor = System.Drawing.Color.Black;
+            this.IblApellido.Location = new System.Drawing.Point(22, 150);
+            this.IblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IblApellido.Name = "IblApellido";
-            this.IblApellido.Size = new System.Drawing.Size(69, 20);
+            this.IblApellido.Size = new System.Drawing.Size(57, 16);
             this.IblApellido.TabIndex = 4;
             this.IblApellido.Text = "Apellido:";
             // 
@@ -94,47 +105,55 @@ namespace AgendaContactos.GUI.Contactos
             // 
             this.IblTelefono.AutoSize = true;
             this.IblTelefono.BackColor = System.Drawing.Color.Transparent;
-            this.IblTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.IblTelefono.Location = new System.Drawing.Point(-2, 159);
+            this.IblTelefono.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IblTelefono.ForeColor = System.Drawing.Color.Black;
+            this.IblTelefono.Location = new System.Drawing.Point(22, 185);
+            this.IblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IblTelefono.Name = "IblTelefono";
-            this.IblTelefono.Size = new System.Drawing.Size(75, 20);
+            this.IblTelefono.Size = new System.Drawing.Size(58, 16);
             this.IblTelefono.TabIndex = 5;
             this.IblTelefono.Text = "Telefono:";
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(103, 99);
+            this.txtApellido.Location = new System.Drawing.Point(105, 147);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(366, 26);
+            this.txtApellido.Size = new System.Drawing.Size(245, 20);
             this.txtApellido.TabIndex = 6;
             // 
             // texTelefono
             // 
-            this.texTelefono.Location = new System.Drawing.Point(103, 153);
+            this.texTelefono.Location = new System.Drawing.Point(105, 182);
+            this.texTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.texTelefono.Name = "texTelefono";
-            this.texTelefono.Size = new System.Drawing.Size(366, 26);
+            this.texTelefono.Size = new System.Drawing.Size(245, 20);
             this.texTelefono.TabIndex = 7;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.Location = new System.Drawing.Point(2, 406);
+            this.btnActualizar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnActualizar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(26, 316);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(211, 41);
+            this.btnActualizar.Size = new System.Drawing.Size(141, 27);
             this.btnActualizar.TabIndex = 8;
-            this.btnActualizar.Text = "Actualizar Datos.";
+            this.btnActualizar.Text = "Actualizar Datos";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnCancelar.BackColor = System.Drawing.Color.IndianRed;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(577, 406);
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(522, 311);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(211, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(82, 32);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -142,24 +161,49 @@ namespace AgendaContactos.GUI.Contactos
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.BackColor = System.Drawing.Color.Brown;
             this.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminar.Location = new System.Drawing.Point(498, 220);
+            this.btnEliminar.Location = new System.Drawing.Point(266, 314);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(290, 58);
+            this.btnEliminar.Size = new System.Drawing.Size(141, 27);
             this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar Cpntacto";
+            this.btnEliminar.Text = "Eliminar Contacto";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(375, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(246, 255);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 31);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "ID Contacto";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmEditarContacto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(634, 355);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizar);
@@ -171,9 +215,14 @@ namespace AgendaContactos.GUI.Contactos
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtIdEditar);
             this.Controls.Add(this.LdLid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEditarContacto";
-            this.Text = "ID Contacto";
+            this.Text = "Smart Contacts | ID Contacto";
             this.Load += new System.EventHandler(this.FrmEditarContacto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +241,7 @@ namespace AgendaContactos.GUI.Contactos
     public System.Windows.Forms.TextBox texTelefono;
     private System.Windows.Forms.Button btnCancelar;
     private System.Windows.Forms.Button btnEliminar;
+    private System.Windows.Forms.PictureBox pictureBox1;
+    public System.Windows.Forms.Label label1;
   }
 }

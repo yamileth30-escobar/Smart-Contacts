@@ -47,11 +47,12 @@ namespace GUI.Contactos
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(36, 25);
+            this.label1.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(34, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 38);
+            this.label1.Size = new System.Drawing.Size(221, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Contactos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,24 +64,25 @@ namespace GUI.Contactos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactos.Location = new System.Drawing.Point(43, 98);
-            this.dgvContactos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvContactos.Location = new System.Drawing.Point(29, 64);
+            this.dgvContactos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.RowHeadersWidth = 51;
             this.dgvContactos.RowTemplate.Height = 24;
-            this.dgvContactos.Size = new System.Drawing.Size(760, 374);
+            this.dgvContactos.Size = new System.Drawing.Size(537, 243);
             this.dgvContactos.TabIndex = 1;
             this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
             this.dgvContactos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgContactos_CellDoubleClick);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.Location = new System.Drawing.Point(58, 502);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnActualizar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnActualizar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(39, 326);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(84, 47);
+            this.btnActualizar.Size = new System.Drawing.Size(82, 32);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -88,25 +90,27 @@ namespace GUI.Contactos
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnNuevo.ForeColor = System.Drawing.Color.Black;
-            this.btnNuevo.Location = new System.Drawing.Point(199, 502);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(151, 326);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(137, 47);
+            this.btnNuevo.Size = new System.Drawing.Size(82, 27);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo Contacto";
             this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.button2_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(387, 502);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEditar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(272, 326);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(84, 47);
+            this.btnEditar.Size = new System.Drawing.Size(82, 32);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -114,12 +118,13 @@ namespace GUI.Contactos
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(555, 502);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(386, 326);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(84, 47);
+            this.btnEliminar.Size = new System.Drawing.Size(82, 32);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -127,12 +132,13 @@ namespace GUI.Contactos
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnCerrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrar.Location = new System.Drawing.Point(708, 502);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCerrar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(494, 326);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(84, 47);
+            this.btnCerrar.Size = new System.Drawing.Size(82, 32);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -140,10 +146,9 @@ namespace GUI.Contactos
             // 
             // FrmListaContactos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(600, 365);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -151,9 +156,12 @@ namespace GUI.Contactos
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvContactos);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmListaContactos";
-            this.Text = "FrmListaContactos";
+            this.Text = " Smart Contacts |  FrmListaContactos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,10 +170,7 @@ namespace GUI.Contactos
 
         private void button2_Click(object sender, EventArgs e)
         {
-          FrmAgregarContacto frm = new FrmAgregarContacto();
-          frm.ShowDialog();
-          CargarContactos();
-          throw new NotImplementedException();
+
         }
 
         private void Lista_Click(object sender, EventArgs e)

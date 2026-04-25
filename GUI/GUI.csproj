@@ -102,6 +102,9 @@
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,8 +175,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Recursos\7063217.png" />
     <Content Include="Recursos\9781056-icone-de-design-moderno-de-seguranca-de-perfil-da-web-vetor.jpg" />
-    <Content Include="Recursos\calendario-_1_.ico" />
+    <Content Include="Recursos\agenda %281%29.ico" />
+    <Content Include="Recursos\borrar.png" />
+    <Content Include="Recursos\visually-appealing-icon-of-contact-book-ready-to-use-and-download-vector.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
