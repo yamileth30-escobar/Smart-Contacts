@@ -1,14 +1,16 @@
-﻿using AgendaContactos.EL;
 using AgendaContactos.DAL;
-using System.Data;
+using AgendaContactos.EL;
 
 namespace AgendaContactos.BLL
 {
-    public class UsuarioBLL
-    {
-        private readonly UsuarioDAL dal = new UsuarioDAL();
+  public class UsuarioBLL
+  {
+    // Cambiamos UsuarioDAL por UsuarioDALBase para que coincida con tu otro archivo
+    UsuarioDALBase dal = new UsuarioDALBase();
 
-        public bool Login(UsuarioEL u) => dal.Login(u);
-        public void AsegurarUsuarioPorDefecto() => dal.AsegurarUsuarioPorDefecto();
+    public bool Login(Usuario u)
+    {
+      return dal.Login(u);
     }
+  }
 }
