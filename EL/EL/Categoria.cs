@@ -1,18 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace AgendaContactos.EL
 {
+    // Solo debe decir "public class" una vez
     public class Categoria
     {
+        // Identificador único de la categoría (Ej: 1, 2, 3)
         public int Id { get; set; }
-        public string NombreCategoria { get; set; } = string.Empty;
 
-        public Categoria() { }
-
-        public Categoria(int id, string nombre)
-        {
-            Id = id;
-            Nombre = nombre;
-        }
-
-        public override string ToString() => Nombre ?? string.Empty;
+        // Nombre de la categoría (Ej: Familia, Trabajo, Amigos)
+        public string Nombre { get; set; }
     }
 }
