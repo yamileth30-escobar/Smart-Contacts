@@ -33,7 +33,6 @@ namespace AgendaContactos.GUI.Contactos
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@ namespace AgendaContactos.GUI.Contactos
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,14 +86,6 @@ namespace AgendaContactos.GUI.Contactos
             this.textBox3.Size = new System.Drawing.Size(197, 20);
             this.textBox3.TabIndex = 3;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(152, 181);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 20);
-            this.textBox4.TabIndex = 4;
-            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(152, 128);
@@ -105,6 +97,11 @@ namespace AgendaContactos.GUI.Contactos
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Amigos",
+            "Familia",
+            "VIP",
+            "Negocios"});
             this.comboBox1.Location = new System.Drawing.Point(152, 344);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBox1.Name = "comboBox1";
@@ -177,7 +174,7 @@ namespace AgendaContactos.GUI.Contactos
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 16);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Dirección:";
+            this.label5.Text = "Direccion:";
             // 
             // label6
             // 
@@ -228,12 +225,22 @@ namespace AgendaContactos.GUI.Contactos
             this.label7.Text = "Nuevo Contacto";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(152, 182);
+            this.textBox4.Mask = "+(000) 0000-0000";
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(197, 20);
+            this.textBox4.TabIndex = 44;
+            this.textBox4.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // FrmAgregarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(679, 407);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGuardar);
@@ -245,7 +252,6 @@ namespace AgendaContactos.GUI.Contactos
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -268,7 +274,6 @@ namespace AgendaContactos.GUI.Contactos
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnCancelar;
@@ -280,5 +285,6 @@ namespace AgendaContactos.GUI.Contactos
         private System.Windows.Forms.Button btnGuardar;
     private System.Windows.Forms.PictureBox pictureBox1;
     public System.Windows.Forms.Label label7;
+    public System.Windows.Forms.MaskedTextBox textBox4;
   }
 }

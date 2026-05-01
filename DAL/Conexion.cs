@@ -3,17 +3,17 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-  // Cambiamos 'internal' por 'public' para que todos puedan ver la clase
   public class Conexion
   {
-    // Tu cadena de conexión hacia el servidor SQL
-    private static string cadena = @"Data Source=.\SQL;Initial Catalog=AgendaContactos;Integrated Security=True";
+    // Usamos el nombre de la instancia que acabas de iniciar en el CMD
+    // Prueba con esta cadena que es más "fuerte" para LocalDB
+    private static string cadena = @"Server=(localdb)\MSSQLLocalDB;Database=AgendaContactos;Trusted_Connection=True;Connect Timeout=30;";
 
     public Conexion()
     {
     }
 
-    // AGREGAMOS 'public static': Esto es lo que quita los 10 errores de un solo
+    // Método estático corregido
     public static SqlConnection ObtenerConexion()
     {
       return new SqlConnection(cadena);

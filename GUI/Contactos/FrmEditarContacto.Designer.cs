@@ -36,12 +36,12 @@ namespace AgendaContactos.GUI.Contactos
             this.IblApellido = new System.Windows.Forms.Label();
             this.IblTelefono = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.texTelefono = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,6 @@ namespace AgendaContactos.GUI.Contactos
             this.txtIdEditar.Location = new System.Drawing.Point(105, 87);
             this.txtIdEditar.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdEditar.Name = "txtIdEditar";
-            this.txtIdEditar.ReadOnly = true;
             this.txtIdEditar.Size = new System.Drawing.Size(245, 20);
             this.txtIdEditar.TabIndex = 1;
             // 
@@ -121,14 +120,6 @@ namespace AgendaContactos.GUI.Contactos
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(245, 20);
             this.txtApellido.TabIndex = 6;
-            // 
-            // texTelefono
-            // 
-            this.texTelefono.Location = new System.Drawing.Point(105, 182);
-            this.texTelefono.Margin = new System.Windows.Forms.Padding(2);
-            this.texTelefono.Name = "texTelefono";
-            this.texTelefono.Size = new System.Drawing.Size(245, 20);
-            this.texTelefono.TabIndex = 7;
             // 
             // btnActualizar
             // 
@@ -196,18 +187,27 @@ namespace AgendaContactos.GUI.Contactos
             this.label1.Text = "ID Contacto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // mskTelefono
+            // 
+            this.mskTelefono.Location = new System.Drawing.Point(105, 184);
+            this.mskTelefono.Mask = "+(000) 0000-0000";
+            this.mskTelefono.Name = "mskTelefono";
+            this.mskTelefono.Size = new System.Drawing.Size(245, 20);
+            this.mskTelefono.TabIndex = 45;
+            this.mskTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // FrmEditarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(634, 355);
+            this.Controls.Add(this.mskTelefono);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.texTelefono);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.IblTelefono);
             this.Controls.Add(this.IblApellido);
@@ -238,10 +238,10 @@ namespace AgendaContactos.GUI.Contactos
     public System.Windows.Forms.TextBox txtIdEditar;
     public System.Windows.Forms.TextBox txtNombre;
     public System.Windows.Forms.TextBox txtApellido;
-    public System.Windows.Forms.TextBox texTelefono;
     private System.Windows.Forms.Button btnCancelar;
     private System.Windows.Forms.Button btnEliminar;
     private System.Windows.Forms.PictureBox pictureBox1;
     public System.Windows.Forms.Label label1;
+    public System.Windows.Forms.MaskedTextBox mskTelefono;
   }
 }

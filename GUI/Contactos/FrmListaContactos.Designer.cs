@@ -4,34 +4,34 @@ using System.Windows.Forms;
 
 namespace GUI.Contactos
 {
-    partial class FrmListaContactos
+  partial class FrmListaContactos
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListaContactos));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvContactos = new System.Windows.Forms.DataGridView();
@@ -72,7 +72,7 @@ namespace GUI.Contactos
             this.dgvContactos.Size = new System.Drawing.Size(537, 243);
             this.dgvContactos.TabIndex = 1;
             this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
-            this.dgvContactos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgContactos_CellDoubleClick);
+            this.dgvContactos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellDoubleClick);
             // 
             // btnActualizar
             // 
@@ -142,7 +142,7 @@ namespace GUI.Contactos
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmListaContactos
             // 
@@ -166,31 +166,56 @@ namespace GUI.Contactos
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lista_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        private Label label1;
-        private DataGridView dgvContactos;
-        private Button btnActualizar;
-        private Button btnNuevo;
-        private Button btnEditar;
-        private Button btnEliminar;
-        private Button btnCerrar;
     }
+
+    private void btnEliminar_Click(object sender, EventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void dgvContactos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void BtnActualizar_Click(object sender, EventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void btnNuevo_Click(object sender, EventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Lista_Click(object sender, EventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    #endregion
+
+    private Label label1;
+    private DataGridView dgvContactos;
+    private Button btnCerrar;
+    public Button btnActualizar;
+    public Button btnNuevo;
+    public Button btnEditar;
+    public Button btnEliminar;
+  }
 }

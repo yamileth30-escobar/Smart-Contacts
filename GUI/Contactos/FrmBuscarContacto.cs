@@ -11,85 +11,75 @@ namespace AgendaContactos.GUI.Contactos
     public FrmBuscarContacto()
     {
       InitializeComponent();
-      this.Text = "Buscador de Contactos";
+      this.Text = "Buscador de Contactos - Smart Contacts";
     }
 
-    // ESTE MÉTODO ES EL QUE SE ACTIVA AL DAR CLIC AL BOTÓN
+    // --- BOTÓN BUSCAR ---
     private void btnBuscar_Click(object sender, EventArgs e)
     {
-      // 1. Validamos el cuadro de texto (txtBusqueda)
+      // Validamos que el cuadro de texto no esté vacío
       if (string.IsNullOrWhiteSpace(txtBusqueda.Text))
       {
-        MessageBox.Show("Escribí al menos una letra para buscar", "Aviso");
+        MessageBox.Show("Por favor, escriba un nombre para buscar.", "Aviso");
         return;
       }
 
       try
       {
-        // 2. Conexión desde el archivo App.config
         string cadena = ConfigurationManager.ConnectionStrings["AgendaContactos"].ConnectionString;
 
         using (SqlConnection conexion = new SqlConnection(cadena))
         {
           conexion.Open();
 
-          // 3. Consulta SQL para buscar por nombre
-          string query = "SELECT IdContacto AS [ID], Nombre, Apellido, Telefono, Correo " +
+          // Query usando "Id" como está en tu tabla
+          string query = "SELECT Id AS [ID], Nombre, Apellido, Telefono, Correo " +
                          "FROM Contactos WHERE Nombre LIKE @nom + '%'";
 
           SqlCommand cmd = new SqlCommand(query, conexion);
           cmd.Parameters.AddWithValue("@nom", txtBusqueda.Text.Trim());
 
-          // 4. Llenamos la tabla virtual
           SqlDataAdapter adapter = new SqlDataAdapter(cmd);
           DataTable dt = new DataTable();
           adapter.Fill(dt);
 
-          // 5. MOSTRAR RESULTADOS EN LA TABLA
-        
+          // Llenamos la tabla
           dvgResultado.DataSource = dt;
 
-          // 6. Mensaje si no hay resultados
           if (dt.Rows.Count == 0)
           {
-            MessageBox.Show("No encontré a nadie con ese nombre.", "Sin resultados");
+            MessageBox.Show("No se encontraron contactos con ese nombre.", "Sin resultados");
           }
         }
       }
       catch (Exception ex)
       {
-        MessageBox.Show("Se trabó la carreta: " + ex.Message, "Error Crítico");
+        MessageBox.Show("Error al buscar: " + ex.Message, "Error Crítico");
       }
     }
 
-    private void label1_Click(object sender, EventArgs e) { }
-    private void txtBusqueda_TextChanged(object sender, EventArgs e) { }
-
-    private void dvgResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    // --- EVENTO PARA EVITAR EL ERROR DE TEXTCHANGED ---
+    // Lo dejamos vacío para que si Visual Studio lo busca, no se trabe
+    private void txtBusqueda_TextChanged(object sender, EventArgs e)
     {
-
     }
 
-     private void dgvResultado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    // --- DOBLE CLIC PARA EDITAR ---
+    private void dvgResultado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
-      // 1. Verificamos que no hayas dado clic en el encabezado (fila -1)
       if (e.RowIndex >= 0)
       {
-        // 2. Creamos la instancia de la ventana de editar
         FrmEditarContacto frm = new FrmEditarContacto();
 
-        // 3. Pasamos los datos usando el nombre correcto: dvgResultado
+        // Pasamos los datos a la ventana de editar
         frm.txtIdEditar.Text = dvgResultado.Rows[e.RowIndex].Cells["ID"].Value.ToString();
         frm.txtNombre.Text = dvgResultado.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
         frm.txtApellido.Text = dvgResultado.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
-        frm.texTelefono.Text = dvgResultado.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
-        // 4. Mostramos la ventana de editar
-        frm.ShowDialog();
+        frm.mskTelefono.Text = dvgResultado.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
 
-        // 5. Cuando cerrés la ventana de editar, refrescamos la tabla para ver los cambios
-        btnBuscar_Click(null, null);
+        frm.ShowDialog();
+        btnBuscar_Click(null, null); // Refresca la tabla
       }
     }
   }
-  
 }

@@ -1,33 +1,33 @@
 namespace GUI
 {
-    partial class MainForm
+  partial class MainForm
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,7 +177,6 @@ namespace GUI
             this.editarContactoToolStripMenuItem.Name = "editarContactoToolStripMenuItem";
             this.editarContactoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.editarContactoToolStripMenuItem.Text = "Editar Contacto";
-            this.editarContactoToolStripMenuItem.Visible = false;
             this.editarContactoToolStripMenuItem.Click += new System.EventHandler(this.editarContactoToolStripMenuItem_Click);
             // 
             // eliminarContactoToolStripMenuItem
@@ -185,7 +184,6 @@ namespace GUI
             this.eliminarContactoToolStripMenuItem.Name = "eliminarContactoToolStripMenuItem";
             this.eliminarContactoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.eliminarContactoToolStripMenuItem.Text = "Eliminar Contacto";
-            this.eliminarContactoToolStripMenuItem.Visible = false;
             this.eliminarContactoToolStripMenuItem.Click += new System.EventHandler(this.eliminarContactoToolStripMenuItem_Click);
             // 
             // categoríasToolStripMenuItem
@@ -295,25 +293,25 @@ namespace GUI
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
+    }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contactosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarNuevoContactoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verListaDeContactoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarContactoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarContactoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarContactoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoríasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionarCategoríasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeSmartContactsToolStripMenuItem;
+    private System.Windows.Forms.MenuStrip menuStrip1;
+    private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem contactosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem agregarNuevoContactoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem verListaDeContactoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem buscarContactoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem editarContactoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem eliminarContactoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem categoríasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem gestionarCategoríasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem acercaDeSmartContactsToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator respaldoDeDatosToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem respaldoDeDatosToolStripMenuItem1;

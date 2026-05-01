@@ -10,46 +10,50 @@ namespace AgendaContactos.GUI.Contactos
     public FrmAgregarContacto()
     {
       InitializeComponent();
-      this.Text = "Agregar Nuevo Contacto";
+      this.Text = "Agregar Nuevo Contacto - Smart Contacts";
     }
-
-    // --- BOTÓN GUARDAR (LA MAGIA) ---
+    // --- BOTÓN GUARDAR ---
     private void btnGuardar_Click(object sender, EventArgs e)
     {
-      // 1. Validación: Que no dejen el nombre vacío
       if (string.IsNullOrWhiteSpace(textBox1.Text))
       {
-        MessageBox.Show("El nombre es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MessageBox.Show("El nombre es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+      }
+
+      if (string.IsNullOrWhiteSpace(textBox4.Text))
+      {
+        MessageBox.Show("El teléfono es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return;
       }
 
       try
       {
-        // 2. Conexión: Buscamos el cable en el App.config
         string cadena = ConfigurationManager.ConnectionStrings["AgendaContactos"].ConnectionString;
 
         using (SqlConnection conexion = new SqlConnection(cadena))
         {
           conexion.Open();
 
-          // 3. La orden para SQL Server
-          string query = "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo) " +
-                         "VALUES (@nom, @ape, @tel, @cor)";
+          // CORRECCIÓN AQUÍ: Agregamos UsuarioId en la lista de columnas para que el "1" tenga donde caer
+          string query = "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo, Direccion, CategoriaId, UsuarioId) " +
+                          "VALUES (@nom, @ape, @tel, @cor, @dir, @cat, 1)";
 
           SqlCommand cmd = new SqlCommand(query, conexion);
 
-          // 4. Pasamos los datos de tus cuadros de texto (TextBoxes)
           cmd.Parameters.AddWithValue("@nom", textBox1.Text.Trim());
-          cmd.Parameters.AddWithValue("@ape", textBox2.Text.Trim());
-          cmd.Parameters.AddWithValue("@tel", textBox3.Text.Trim());
-          cmd.Parameters.AddWithValue("@cor", textBox4.Text.Trim());
+          cmd.Parameters.AddWithValue("@ape", textBox5.Text.Trim());
+          cmd.Parameters.AddWithValue("@tel", textBox4.Text.Trim());
+          cmd.Parameters.AddWithValue("@cor", textBox3.Text.Trim());
+          cmd.Parameters.AddWithValue("@dir", textBox2.Text.Trim());
 
-          // 5. ¡Ejecutamos la orden!
+          // Como CategoriaId es número, le mandamos el 1 por ahora para que no falle
+          cmd.Parameters.AddWithValue("@cat", 1);
+
           cmd.ExecuteNonQuery();
 
           MessageBox.Show("¡Contacto guardado con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-          this.Close(); // Cerramos la ventana al terminar
+          this.Close();
         }
       }
       catch (Exception ex)
@@ -58,10 +62,9 @@ namespace AgendaContactos.GUI.Contactos
       }
     }
 
-    // --- BOTÓN CANCELAR (EL QUE TE FALTABA) ---
+    // --- BOTÓN CANCELAR ---
     private void btnCancelar_Click(object sender, EventArgs e)
     {
-      // Preguntamos para que no se cierre por error
       DialogResult respuesta = MessageBox.Show("¿Estás seguro de que deseas cancelar? Se perderán los datos ingresados.",
                           "Confirmar",
                           MessageBoxButtons.YesNo,
@@ -69,13 +72,12 @@ namespace AgendaContactos.GUI.Contactos
 
       if (respuesta == DialogResult.Yes)
       {
-        this.Close(); // Cerramos solo esta ventanita
+        this.Close();
       }
     }
 
-    // Estos métodos se quedan así por si les diste doble clic por error en el diseño
+    // --- EXTRAS (Eventos vacíos por si acaso) ---
     private void textBox1_TextChanged(object sender, EventArgs e) { }
     private void label3_Click(object sender, EventArgs e) { }
-    private void button2_Click(object sender, EventArgs e) { this.Close(); }
   }
 }

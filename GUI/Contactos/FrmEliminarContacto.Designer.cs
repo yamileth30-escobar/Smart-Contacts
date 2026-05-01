@@ -1,3 +1,5 @@
+using System;
+
 namespace AgendaContactos.GUI.Contactos
 {
   partial class FrmEliminarContacto
@@ -34,6 +36,7 @@ namespace AgendaContactos.GUI.Contactos
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@ namespace AgendaContactos.GUI.Contactos
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar Contacto";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.label1_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // pictureBox1
             // 
@@ -97,11 +100,26 @@ namespace AgendaContactos.GUI.Contactos
             this.label1.Text = "Eliminar Contacto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Brown;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCancelar.Location = new System.Drawing.Point(286, 228);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(151, 36);
+            this.btnCancelar.TabIndex = 46;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmEliminarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 284);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEliminar);
@@ -119,6 +137,11 @@ namespace AgendaContactos.GUI.Contactos
 
     }
 
+    private void label1_Click(object sender, EventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
     #endregion
 
     private System.Windows.Forms.Label IBLIdBorrar;
@@ -126,5 +149,6 @@ namespace AgendaContactos.GUI.Contactos
     private System.Windows.Forms.Button btnEliminar;
     private System.Windows.Forms.PictureBox pictureBox1;
     public System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Button btnCancelar;
   }
 }
