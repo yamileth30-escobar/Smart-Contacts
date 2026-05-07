@@ -13,6 +13,7 @@ namespace GUI.Contactos
     {
       InitializeComponent();
       this.Text = "Lista de Contactos - Smart Contacts";
+      this.StartPosition = FormStartPosition.CenterScreen;
     }
 
     private void FrmListaContactos_Load(object sender, EventArgs e)
@@ -24,7 +25,6 @@ namespace GUI.Contactos
     {
       try
       {
-        // CAMBIO AQUÍ: Quita el "new" y los paréntesis de Conexion
         using (SqlConnection conn = DAL.Conexion.ObtenerConexion())
         {
           conn.Open();
@@ -41,7 +41,13 @@ namespace GUI.Contactos
       }
     }
 
-    // ESTE ES EL QUE DABA ERROR - YA ESTÁ CORREGIDO:
+    private void btnNuevo_Click(object sender, EventArgs e)
+    {
+      FrmAgregarContacto frm = new FrmAgregarContacto();
+      frm.ShowDialog();
+      CargarContactos();
+    }
+
     private void btnActualizar_Click(object sender, EventArgs e)
     {
       CargarContactos();
@@ -59,6 +65,43 @@ namespace GUI.Contactos
 
         frm.ShowDialog();
         CargarContactos();
+      }
+      else
+      {
+        MessageBox.Show("Por favor, selecciona un contacto para editar.");
+      }
+    }
+
+    private void btnEliminar_Click(object sender, EventArgs e)
+    {
+      if (dgvContactos.CurrentRow != null)
+      {
+        DialogResult res = MessageBox.Show("¿Deseas eliminar este contacto?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (res == DialogResult.Yes)
+        {
+          try
+          {
+            int id = Convert.ToInt32(dgvContactos.CurrentRow.Cells["ID"].Value);
+            using (SqlConnection conn = DAL.Conexion.ObtenerConexion())
+            {
+              conn.Open();
+              string query = "DELETE FROM Contactos WHERE Id = @id";
+              SqlCommand cmd = new SqlCommand(query, conn);
+              cmd.Parameters.AddWithValue("@id", id);
+              cmd.ExecuteNonQuery();
+            }
+            MessageBox.Show("Contacto eliminado correctamente.");
+            CargarContactos();
+          }
+          catch (Exception ex)
+          {
+            MessageBox.Show("Error al eliminar: " + ex.Message);
+          }
+        }
+      }
+      else
+      {
+        MessageBox.Show("Selecciona un contacto para eliminar.");
       }
     }
 

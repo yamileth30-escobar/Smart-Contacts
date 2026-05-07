@@ -1,7 +1,8 @@
 using System;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace AgendaContactos.GUI.Contactos
 {
@@ -11,7 +12,43 @@ namespace AgendaContactos.GUI.Contactos
     {
       InitializeComponent();
       this.Text = "Agregar Nuevo Contacto - Smart Contacts";
+      this.StartPosition = FormStartPosition.CenterScreen;
+
+      // Cargamos las categorías apenas se abra la ventana
+      CargarCategorias();
     }
+
+    // --- MÉTODO PARA LLENAR EL COMBOBOX DESDE LA BASE DE DATOS ---
+    private void CargarCategorias()
+    {
+      try
+      {
+        string cadena = ConfigurationManager.ConnectionStrings["AgendaContactos"].ConnectionString;
+        using (SqlConnection conexion = new SqlConnection(cadena))
+        {
+          conexion.Open();
+
+          // NOTA: Si en tu base de datos la columna no se llama ID, cámbiala aquí
+          string query = "SELECT * FROM Categorias";
+
+          SqlDataAdapter da = new SqlDataAdapter(query, conexion);
+          DataTable dt = new DataTable();
+          da.Fill(dt);
+
+          // Vinculamos los datos al ComboBox
+          comboBox1.DataSource = dt;
+          comboBox1.DisplayMember = "Nombre";    // Lo que el usuario ve
+
+          // Aquí usamos la primera columna de tu tabla (normalmente el ID)
+          comboBox1.ValueMember = dt.Columns[0].ColumnName;
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("No se pudieron cargar las categorías: " + ex.Message, "Error");
+      }
+    }
+
     // --- BOTÓN GUARDAR ---
     private void btnGuardar_Click(object sender, EventArgs e)
     {
@@ -35,7 +72,6 @@ namespace AgendaContactos.GUI.Contactos
         {
           conexion.Open();
 
-          // CORRECCIÓN AQUÍ: Agregamos UsuarioId en la lista de columnas para que el "1" tenga donde caer
           string query = "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo, Direccion, CategoriaId, UsuarioId) " +
                           "VALUES (@nom, @ape, @tel, @cor, @dir, @cat, 1)";
 
@@ -47,8 +83,11 @@ namespace AgendaContactos.GUI.Contactos
           cmd.Parameters.AddWithValue("@cor", textBox3.Text.Trim());
           cmd.Parameters.AddWithValue("@dir", textBox2.Text.Trim());
 
-          // Como CategoriaId es número, le mandamos el 1 por ahora para que no falle
-          cmd.Parameters.AddWithValue("@cat", 1);
+          // Si no hay nada seleccionado, mandamos null o un valor por defecto
+          if (comboBox1.SelectedValue != null)
+            cmd.Parameters.AddWithValue("@cat", comboBox1.SelectedValue);
+          else
+            cmd.Parameters.AddWithValue("@cat", DBNull.Value);
 
           cmd.ExecuteNonQuery();
 
@@ -58,25 +97,15 @@ namespace AgendaContactos.GUI.Contactos
       }
       catch (Exception ex)
       {
-        MessageBox.Show("Se trabó la carreta: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("Error al guardar: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
-    // --- BOTÓN CANCELAR ---
     private void btnCancelar_Click(object sender, EventArgs e)
     {
-      DialogResult respuesta = MessageBox.Show("¿Estás seguro de que deseas cancelar? Se perderán los datos ingresados.",
-                          "Confirmar",
-                          MessageBoxButtons.YesNo,
-                          MessageBoxIcon.Question);
-
-      if (respuesta == DialogResult.Yes)
-      {
-        this.Close();
-      }
+      this.Close();
     }
 
-    // --- EXTRAS (Eventos vacíos por si acaso) ---
     private void textBox1_TextChanged(object sender, EventArgs e) { }
     private void label3_Click(object sender, EventArgs e) { }
   }

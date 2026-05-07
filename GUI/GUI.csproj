@@ -39,7 +39,7 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>agenda %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>Recursos\agenda %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -67,6 +67,12 @@
     </Compile>
     <Compile Include="Autenticacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias\FrmAgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias\FrmAgregarCategoria.Designer.cs">
+      <DependentUpon>FrmAgregarCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Categorias\FrmGestionarCategorias.cs">
       <SubType>Form</SubType>
@@ -129,6 +135,9 @@
     <EmbeddedResource Include="Autenticacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Categorias\FrmAgregarCategoria.resx">
+      <DependentUpon>FrmAgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Categorias\FrmGestionarCategorias.resx">
       <DependentUpon>FrmGestionarCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +192,7 @@
     <Content Include="Recursos\agenda %281%29.ico" />
     <Content Include="Recursos\borrar.png" />
     <Content Include="Recursos\visually-appealing-icon-of-contact-book-ready-to-use-and-download-vector.jpg" />
+    <Content Include="Recursos\web_graphic_infographic_website_time_icon_265383.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
