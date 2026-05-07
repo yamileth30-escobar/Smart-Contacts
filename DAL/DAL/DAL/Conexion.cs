@@ -1,22 +1,22 @@
 using System;
-using System.Configuration;
 using System.Data.SqlClient;
 
-namespace AgendaContactos.DAL
+namespace DAL
 {
-    public class Conexion
+  // Cambiamos 'internal' por 'public' para que todos puedan ver la clase
+  public class Conexion
+  {
+    // Tu cadena de conexión hacia el servidor SQL
+    private static string cadena = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AgendaContactos;Integrated Security=True";
+
+    public Conexion()
     {
-        public SqlConnection ObtenerConexion()
-        {
-            // Lee la cadena 'conexionBD' en el App.config
-            string connectionString = ConfigurationManager.ConnectionStrings["conexionBD"]?.ConnectionString;
-
-            if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                throw new Exception("Error: No se encontró la configuración 'conexionBD' en App.config.");
-            }
-
-            return new SqlConnection(connectionString);
-        }
     }
+
+    // AGREGAMOS 'public static': Esto es lo que quita los 10 errores de un solo
+    public static SqlConnection ObtenerConexion()
+    {
+      return new SqlConnection(cadena);
+    }
+  }
 }

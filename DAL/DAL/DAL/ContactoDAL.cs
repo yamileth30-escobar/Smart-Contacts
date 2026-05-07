@@ -1,81 +1,100 @@
+using DAL;
 using AgendaContactos.EL;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace AgendaContactos.DAL
 {
-    public class ContactoDAL
+  public class ContactoDAL
+  {
+    // 1. Creamos una instancia de la conexión para poder usarla en toda la clase
+    // Esto arregla el error CS0120 (Se requiere referencia de objeto)
+    Conexion conector = new Conexion();
+
+    public DataTable Listar()
     {
-        private readonly Conexion conexion = new Conexion();
-
-        // 1. LISTAR SIRVE PARA MOSTRAR LOS CONTACTOS EN EL DATAGRIDVIEW
-        public DataTable Listar()
+      DataTable dt = new DataTable();
+      // Usamos 'conector' en lugar de 'Conexion'
+      using (SqlConnection con = Conexion.ObtenerConexion())
+      {
+        using (SqlDataAdapter da = new SqlDataAdapter("SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos ORDER BY Id DESC", con))
         {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            using (SqlDataAdapter da = new SqlDataAdapter(
-                "SELECT Id, Nombre, Apellido, Telefono, Correo, CategoriaId FROM Contactos ORDER BY Id DESC", con))
-            {
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
+          da.Fill(dt);
         }
-
-        // 2. INSERTAR GUARDAR UN NUEVO CONTACTO EN LA BASE DE DATOS
-        public void Insertar(ContactoEL c)
-        {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo, CategoriaId, UsuarioId) VALUES (@n, @a, @t, @c, @cat, @u)", con))
-            {
-                // El operador ?? evita que el programa falle si un campo está vacío
-                cmd.Parameters.AddWithValue("@n", c.Nombre ?? string.Empty);
-                cmd.Parameters.AddWithValue("@a", c.Apellido ?? string.Empty);
-                cmd.Parameters.AddWithValue("@t", c.Telefono ?? string.Empty);
-                cmd.Parameters.AddWithValue("@c", c.Correo ?? string.Empty);
-                cmd.Parameters.AddWithValue("@cat", c.CategoriaId);
-                cmd.Parameters.AddWithValue("@u", c.UsuarioId);
-
-                con.Open();
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        // 3. ACTUALIZAR EDITAR UN CONTACTO EXISTENTE EN LA BASE DE DATOS
-        public void Actualizar(ContactoEL c)
-        {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand(
-                "UPDATE Contactos SET Nombre=@n, Apellido=@a, Telefono=@t, Correo=@c, CategoriaId=@cat WHERE Id=@id", con))
-            {
-                cmd.Parameters.AddWithValue("@id", c.Id);
-                cmd.Parameters.AddWithValue("@n", c.Nombre ?? string.Empty);
-                cmd.Parameters.AddWithValue("@a", c.Apellido ?? string.Empty);
-                cmd.Parameters.AddWithValue("@t", c.Telefono ?? string.Empty);
-                cmd.Parameters.AddWithValue("@c", c.Correo ?? string.Empty);
-                cmd.Parameters.AddWithValue("@cat", c.CategoriaId);
-
-                con.Open();
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        // 4. ELIMINAR UN CONTACTO DE LA BASE DE DATOS
-        public void Eliminar(int id)
-        {
-            using (SqlConnection con = conexion.ObtenerConexion())
-            using (SqlCommand cmd = new SqlCommand("DELETE FROM Contactos WHERE Id=@id", con))
-            {
-                cmd.Parameters.AddWithValue("@id", id);
-                con.Open();
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        public DataTable Buscar(string valor)
-        {
-            throw new NotImplementedException();
-        }
+      }
+      return dt;
     }
+
+    // 2. Especificamos que el Contacto viene de AgendaContactos.EL
+    // Esto arregla el error CS0104 (Referencia ambigua)
+    public void Insertar(AgendaContactos.EL.Contacto c)
+    {
+      using (SqlConnection con = Conexion.ObtenerConexion())
+      {
+        string sql = "INSERT INTO Contactos (Nombre, Telefono, Correo, Direccion) VALUES (@n, @t, @c, @d)";
+        using (SqlCommand cmd = new SqlCommand(sql, con))
+        {
+          cmd.Parameters.AddWithValue("@n", c.Nombre ?? string.Empty);
+          cmd.Parameters.AddWithValue("@t", c.Telefono ?? string.Empty);
+          cmd.Parameters.AddWithValue("@c", c.Correo ?? string.Empty);
+          cmd.Parameters.AddWithValue("@d", c.Direccion ?? string.Empty);
+
+          con.Open();
+          cmd.ExecuteNonQuery();
+        }
+      }
+    }
+
+    public void Actualizar(AgendaContactos.EL.Contacto c)
+    {
+      using (SqlConnection con = Conexion.ObtenerConexion())
+      {
+        string sql = "UPDATE Contactos SET Nombre=@n, Telefono=@t, Correo=@c, Direccion=@d WHERE Id=@id";
+        using (SqlCommand cmd = new SqlCommand(sql, con))
+        {
+          cmd.Parameters.AddWithValue("@id", c.Id);
+          cmd.Parameters.AddWithValue("@n", c.Nombre ?? string.Empty);
+          cmd.Parameters.AddWithValue("@t", c.Telefono ?? string.Empty);
+          cmd.Parameters.AddWithValue("@c", c.Correo ?? string.Empty);
+          cmd.Parameters.AddWithValue("@d", c.Direccion ?? string.Empty);
+
+          con.Open();
+          cmd.ExecuteNonQuery();
+        }
+      }
+    }
+
+    public void Eliminar(int id)
+    {
+      using (SqlConnection con = Conexion.ObtenerConexion())
+      {
+        string sql = "DELETE FROM Contactos WHERE Id=@id";
+        using (SqlCommand cmd = new SqlCommand(sql, con))
+        {
+          cmd.Parameters.AddWithValue("@id", id);
+          con.Open();
+          cmd.ExecuteNonQuery();
+        }
+      }
+    }
+
+    public DataTable Buscar(string valor)
+    {
+      DataTable dt = new DataTable();
+      using (SqlConnection con = Conexion.ObtenerConexion())
+      {
+        string sql = "SELECT Id, Nombre, Telefono, Correo, Direccion FROM Contactos " +
+                     "WHERE Nombre LIKE @b OR Telefono LIKE @b OR Correo LIKE @b OR Direccion LIKE @b " +
+                     "ORDER BY Id DESC";
+        using (SqlDataAdapter da = new SqlDataAdapter(sql, con))
+        {
+          da.SelectCommand.Parameters.AddWithValue("@b", "%" + valor + "%");
+          da.Fill(dt);
+        }
+      }
+      return dt;
+    }
+  }
 }
