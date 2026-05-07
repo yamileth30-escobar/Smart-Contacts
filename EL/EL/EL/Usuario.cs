@@ -16,6 +16,5 @@ namespace AgendaContactos.EL
 
         // Define el nivel de acceso (opcional pero recomendado)
         public string Rol { get; set; }
-    public string NombreCompleto { get; set; }
-  }
+    }
 }
