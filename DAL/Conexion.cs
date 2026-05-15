@@ -7,7 +7,7 @@ namespace DAL
   {
     // Usamos el nombre de la instancia que acabas de iniciar en el CMD
     // Prueba con esta cadena que es más "fuerte" para LocalDB
-    private static string cadena = @"Server=(localdb)\MSSQLLocalDB;Database=AgendaContactos;Trusted_Connection=True;Connect Timeout=30;";
+    private static string cadena = @"Server=(localdb).\SQL;Database=AgendaContactos;Trusted_Connection=True;Connect Timeout=30;";
 
     public Conexion()
     {
